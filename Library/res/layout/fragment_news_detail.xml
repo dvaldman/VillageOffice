@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_dark_blue"
+        >
+
+   
+    
+    <LinearLayout 
+        android:background="@color/app_white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/news_detail_margin_top"
+        android:layout_marginLeft="@dimen/news_detail_margin_sides"
+        android:layout_marginRight="@dimen/news_detail_margin_sides">
+        
+		    <TextView
+		        android:id="@+id/news_detail_date"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+				android:textColor="@color/basic_text"
+				android:textSize="@dimen/main_menu_text"
+				android:gravity="center_horizontal"
+	         />
+			<TextView
+		        android:id="@+id/news_detail_title"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:gravity="center_horizontal"
+				android:textColor="@color/app_blue"
+				android:textSize="@dimen/main_menu_text"
+	         />
+			
+			<ScrollView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent">
+			    <TextView 
+			        android:padding="@dimen/news_detail_long_desc_padding"
+			        android:id="@+id/news_detail_long_desc"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        />
+			</ScrollView>
+        
+    </LinearLayout>
+    
+     <ImageButton 
+        android:id="@+id/exit_button"
+        android:background="@drawable/button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/news_detail_exit_top"
+        android:layout_marginRight="@dimen/news_detail_exit_right"
+        />
+    
+
+</RelativeLayout>

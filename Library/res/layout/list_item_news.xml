@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/main_menu_item_height"
+    android:background="@drawable/menubtn_bg_act"
+    android:padding="10dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/news_header" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/news_header_margin_btm"
+        >
+	    <ImageView
+	        android:id="@+id/thumbnail_img"
+	        android:layout_width="@dimen/news_thumbnail_size"
+	        android:layout_height="@dimen/news_thumbnail_size"
+	        android:contentDescription="@string/app_name"
+	        android:layout_marginRight="@dimen/news_thumbnail_margin"
+	        android:layout_marginBottom="@dimen/news_thumbnail_margin"
+	        android:background="@color/app_light_blue"
+	         />
+    
+	    <RelativeLayout 
+	        android:layout_toRightOf="@+id/thumbnail_img"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        
+		    <TextView
+		        android:layout_alignParentTop="true"
+		        android:id="@+id/news_date"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:textColor="@color/basic_text"
+				android:textSize="@dimen/main_menu_text"
+				android:gravity="center_vertical"
+		         />
+			<TextView
+		        android:id="@+id/news_title"
+		        android:layout_below="@+id/news_date"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:textColor="@color/app_blue"
+				android:textSize="@dimen/main_menu_text"
+				android:gravity="center_vertical"
+		         />
+		</RelativeLayout>
+	</RelativeLayout>
+	<TextView
+        android:id="@+id/news_short_desc"
+        android:layout_below="@+id/news_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textColor="@color/basic_text"
+		android:textSize="@dimen/basic_text"
+		android:gravity="center_vertical"
+		 />
+	
+	<RelativeLayout 
+	    android:layout_below="@+id/news_short_desc"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+	    <TextView 
+	        android:layout_alignParentRight="true"
+	        android:id="@+id/read_more"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/app_blue"
+	        android:textSize="12sp"
+	        android:text="@string/read_more"/>
+	    
+	</RelativeLayout>l
+    
+</RelativeLayout>

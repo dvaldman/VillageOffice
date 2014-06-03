@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+   <color name="app_blue">#083E84</color>
+   <color name="app_yellow">#FEDB01</color>
+   <color name="app_white">#FFFFFF</color>
+   <color name="app_light_blue">#2A87AC</color>
+   <color name="app_dark_blue">#001428</color>
+   <color name="main_menu_text_inact">#FFFFFF</color>
+   <color name="main_menu_text_act">#083E84</color>
+   <color name="app_btns_bg_inactive">#000000</color>
+   <color name="basic_text">#888888</color>
+   
+   
+   
+   <color name="app_main_text_color">#FFFFFF</color>
+    
+</resources>

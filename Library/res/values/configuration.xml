@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<!--    data	 -->
+   <bool name="static_mayor">true</bool>
+   <bool name="static_places">true</bool>
+   <bool name="static_news">false</bool>
+   <bool name="static_contacts">true</bool>
+   <bool name="static_OfficeBoard">false</bool>
+   <bool name="static_atrium">false</bool>
+   <bool name="static_parliament">false</bool>
+   
+   
+<!--    places categories	 -->
+   <string name="places_category1">pharmacy</string> 
+   <string name="places_category2">bureau</string>
+   <string name="places_category3">police</string>
+   <string name="places_category4">hospital</string>
+    
+<!--    report	 -->   
+   <bool name="report_to_mail">true</bool>
+   <string name="mail_for_reporting">valdman@zipper.sk</string>
+   <integer name="number_of_report_photos">1</integer>
+   
+   
+    <array name="main_menu">
+        <item>@string/news</item>
+        <item>@string/traffic_parking</item>
+        <item>@string/matrika</item>
+        <item>@string/atrium</item>
+        <item>@string/report</item>
+    </array>
+    
+    <array name="office_menu">
+        <item>@string/office_board</item>
+        <item>@string/mayor</item>
+        <item>@string/assholes</item>
+    </array>
+    
+    <array name="office_menu_icons">
+        <item>@drawable/info_passive</item>
+        <item>@drawable/starosta_passive</item>
+        <item>@drawable/poslanci_passive</item>
+    </array>
+   
+   
+</resources>

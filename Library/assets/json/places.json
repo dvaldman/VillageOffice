@@ -1,0 +1,124 @@
+{
+    "places": [
+        {
+            "name": "LEKÁREŇ PRI DATASE",
+            "latitude": "48.714802",
+            "longitude": "21.216773",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ KAMILKA",
+            "latitude": "48.715329",
+            "longitude": "21.229962",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ TERASA",
+            "latitude": "48.708122",
+            "longitude": "21.237421",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREN ECHINACEA",
+            "latitude": "48.719134",
+            "longitude": "21.211709",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ TORYSKA",
+            "latitude": "48.719134",
+            "longitude": "21.211709",
+            "category": "pharmacy"
+        },
+        {
+            "name": "VEREJNÁ LEKÁREŇ",
+            "latitude": "48.709677",
+            "longitude": "21.214713",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ ZORA",
+            "latitude": "48.714802",
+            "longitude": "21.216773",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ AESCULAP",
+            "latitude": "48.719134",
+            "longitude": "21.211709",
+            "category": "pharmacy"
+        },
+        {
+            "name": "ARTKE s.r.o.",
+            "latitude": "48.718200",
+            "longitude": "21.219047",
+            "category": "pharmacy"
+        },
+        {
+            "name": "MULTIPHARM, s.r.o.",
+            "latitude": "48.718200",
+            "longitude": "21.219047",
+            "category": "pharmacy"
+        },
+        {
+            "name": "SyndiPharmaspol.sr.o.",
+            "latitude": "48.718200",
+            "longitude": "21.219047",
+            "category": "pharmacy"
+        },
+        {
+            "name": "Sambuccus-s.r.o.",
+            "latitude": "48.718200",
+            "longitude": "21.219047",
+            "category": "pharmacy"
+        },
+        {
+            "name": "MIESTNYÚRADKOŠICE-ZÁPAD",
+            "latitude": "48.714487",
+            "longitude": "21.236018",
+            "category": "bureau"
+        },
+        {
+            "name": "PolíciaSR-ObvodnéoddeleniePZKošice-Západ",
+            "latitude": "48.7162274",
+            "longitude": "21.2380791",
+            "category": "police"
+        },
+        {
+            "name": "Mestská polícia",
+            "latitude": "48.7149603",
+            "longitude": "21.2362015",
+            "category": "police"
+        },
+        {
+            "name": "OkresnériaditeľstvoPZKošice-okolie",
+            "latitude": "48.7149603",
+            "longitude": "21.2362015",
+            "category": "police"
+        },
+        {
+            "name": "PoliklinikaTerasa",
+            "latitude": "48.713579",
+            "longitude": "21.2309295",
+            "category": "hospital"
+        },
+        {
+            "name": "MedicínskeCentrumKošicespol.s.r.o.",
+            "latitude": "48.7106975",
+            "longitude": "21.2316709",
+            "category": "hospital"
+        },
+        {
+            "name": "Ergomeds.r.o.",
+            "latitude": "48.7149603",
+            "longitude": "21.2362015",
+            "category": "hospital"
+        },
+        {
+            "name": "ErgomedPoliklinikaS.r.o.-ADOS",
+            "latitude": "48.7171537",
+            "longitude": "21.2193113",
+            "category": "hospital"
+        }
+    ]
+}

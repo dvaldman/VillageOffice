@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        >
+
+        
+     <ListView 
+         android:layout_centerVertical="true"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/office_menu_list"
+         android:dividerHeight="@dimen/main_menu_divider"
+         android:divider="@android:color/transparent"
+         android:listSelector="@drawable/menubtn_bg_act"
+         android:layout_marginRight="@dimen/main_screen_padding"
+    	 android:layout_marginLeft="@dimen/main_screen_padding">
+         
+     </ListView>  
+    
+
+</RelativeLayout>

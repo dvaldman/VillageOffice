@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@drawable/menubtn_bg_act"
+    android:layout_marginRight="@dimen/report_photos_margin"
+    >
+	<ImageView 
+	    android:layout_height="fill_parent"
+	    android:layout_width="wrap_content"
+	    android:id="@+id/photo"
+	    android:contentDescription="@string/app_name"/>
+ 	   
+	<ImageButton 
+	    android:id="@+id/delete_photo"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/button_exit"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+	    android:contentDescription="@string/app_name"/>
+	
+</RelativeLayout>

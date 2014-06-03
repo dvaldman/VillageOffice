@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@drawable/menubtn_bg_act"
+        android:layout_marginTop="@dimen/header_top_margin"
+        android:textSize="@dimen/header_text_size"
+        android:textColor="@color/app_blue"
+        android:paddingLeft="@dimen/header_padding_left"
+        android:gravity="center_vertical"
+        />
+    
+    <LinearLayout 
+        android:layout_below="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/main_screen_padding_top"
+        >
+        
+     <ListView 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:id="@+id/news_list"
+         android:dividerHeight="@dimen/main_menu_divider"
+         android:divider="@android:color/transparent"
+         android:listSelector="@drawable/menubtn_bg_act"
+         android:scrollbars="none"
+         android:layout_marginRight="@dimen/main_screen_padding"
+    	 android:layout_marginLeft="@dimen/main_screen_padding">
+     </ListView>  
+        
+        
+    </LinearLayout>
+    
+
+</RelativeLayout>

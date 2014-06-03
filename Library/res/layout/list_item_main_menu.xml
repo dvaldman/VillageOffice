@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/main_menu_item_height"
+    android:background="@drawable/menubtn_bg_inact"
+    android:paddingLeft="10dp"
+    >
+
+    <TextView
+        android:id="@+id/list_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/main_menu_item_height"
+		android:textColor="@color/main_menu_text_inact"
+		android:textSize="@dimen/main_menu_text"
+		android:gravity="center_vertical"
+         />
+
+</LinearLayout>

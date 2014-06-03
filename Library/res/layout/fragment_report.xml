@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@drawable/menubtn_bg_act"
+        android:layout_marginTop="@dimen/header_top_margin"
+        android:textSize="@dimen/header_text_size"
+        android:textColor="@color/app_blue"
+        android:paddingLeft="@dimen/header_padding_left"
+        android:gravity="center_vertical"
+        />
+    
+    <ScrollView
+        android:layout_below="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/main_screen_padding_top"
+        >
+        
+     	<LinearLayout 
+     	    android:layout_height="wrap_content"
+     	    android:layout_width="fill_parent"
+     	    android:orientation="vertical">
+     	    
+     	    <LinearLayout 
+     	        android:layout_width="fill_parent"
+     	        android:layout_height="wrap_content"
+     	        android:orientation="horizontal"
+     	        android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding">
+     	        
+     	        <ImageView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:src="@drawable/problem_place_marker"
+     	            android:layout_marginRight="@dimen/report_marker_margin_right"
+     	            android:contentDescription="@string/app_name"/>
+     	        
+     	        <TextView 
+     	            android:id="@+id/report_address"
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:text="adresa"/>
+     	        
+     	    </LinearLayout>
+     	    
+     	    <ImageView 
+     	        android:background="@color/app_white"
+     	        android:layout_width="fill_parent"
+     	        android:layout_height="@dimen/report_divider_height"
+     	        android:layout_marginTop="@dimen/report_divider_margin_top_bottom"
+     	        android:layout_marginBottom="@dimen/report_divider_margin_top_bottom"
+     	        />
+     	    
+     	    <LinearLayout 
+     	        android:orientation="horizontal"
+     	        android:layout_width="wrap_content"
+     	        android:layout_height="wrap_content"
+     	        android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding"
+    	 		android:layout_marginBottom="@dimen/report_divider_margin_top_bottom">
+     	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:textStyle="bold"
+     	            android:text="@string/photo"
+     	        	android:layout_marginRight="5dp"
+     	        	/>   	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:text="@string/of_report"/>
+     	        
+     	    </LinearLayout>
+     	    
+     	    <HorizontalScrollView 
+     	        android:layout_width="wrap_content"
+     	        android:layout_height="wrap_content"
+     	        android:layout_gravity="center_horizontal">
+     	        
+     	        <LinearLayout 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:orientation="horizontal"
+     	            android:id="@+id/photos_container">
+     	            
+     	           
+     	        </LinearLayout>
+     	        
+     	    </HorizontalScrollView>
+     	    
+     	    
+     	     <ImageView 
+     	        android:background="@color/app_white"
+     	        android:layout_width="fill_parent"
+     	        android:layout_height="@dimen/report_divider_height"
+     	        android:layout_marginTop="@dimen/report_divider_margin_top_bottom"
+     	        android:layout_marginBottom="@dimen/report_divider_margin_top_bottom"
+     	        />
+     	     
+     	     <LinearLayout 
+     	        android:orientation="horizontal"
+     	        android:layout_width="wrap_content"
+     	        android:layout_height="wrap_content"
+     	        android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding"
+    	 		android:layout_marginBottom="@dimen/report_divider_margin_top_bottom">
+     	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:textStyle="bold"
+     	            android:text="@string/desc"
+     	        	android:layout_marginRight="5dp"
+     	        	/>   	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:text="@string/of_report"/>
+     	        
+     	    </LinearLayout>
+     	    
+     	     <EditText
+			    android:id="@+id/report_desc"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:hint="@string/desc"
+			    android:lines="5"
+			    android:gravity="left|top"
+			    android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding"
+     	        />
+     	    
+     	
+     	     <Button 
+     	        android:id="@+id/send_report"
+	     	    android:layout_width="wrap_content"
+	     	    android:layout_height="wrap_content"
+	     	    android:padding="10dp"
+	     	    android:layout_gravity="center_horizontal"
+	     	    android:text="@string/send"
+	     	    android:background="@drawable/button_default"
+	     	    android:layout_marginTop="@dimen/report_divider_margin_top_bottom"/>
+     	</LinearLayout>  
+     	
+    </ScrollView>
+    
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+	
+	
+	 <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+	    android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom|center"
+        android:orientation="horizontal"
+        android:background="@color/app_btns_bg_inactive" >
+
+       <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:src="@drawable/subico1_inact"
+             />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:src="@drawable/subico2_inact"
+             />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:src="@drawable/subico3_inact"
+             />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:src="@drawable/subico4_inact"
+             />
+        
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:src="@drawable/subico5_inact"
+             />
+    </LinearLayout>
+    
+	 <ImageView 
+	     android:id="@+id/blue_line"
+	     android:layout_above="@+id/controlPanel"
+	     android:background="@color/app_light_blue"
+	     android:layout_width="fill_parent"
+	     android:layout_height="@dimen/blue_stripe"/>
+	 
+	 <FrameLayout
+	     android:layout_above="@+id/blue_line"
+	        android:id="@+id/content"
+	        android:layout_width="match_parent"
+	        android:layout_height="fill_parent"/>
+	
+	 
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="fill_parent" 
+        android:background="@android:color/transparent">
+<LinearLayout 
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+   
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="150dp"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/app_main_text_color"
+        android:background="@color/app_light_blue"
+		 />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="150dp"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:text="adresa"
+        android:textColor="@color/app_light_blue"
+        android:background="@color/app_main_text_color" />
+</LinearLayout>
+</RelativeLayout>
+
