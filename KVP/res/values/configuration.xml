@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <bool name="static_mayor">true</bool>
+   <bool name="static_places">true</bool>
+   <bool name="static_news">false</bool>
+   <bool name="static_contacts">true</bool>
+    
+</resources>
