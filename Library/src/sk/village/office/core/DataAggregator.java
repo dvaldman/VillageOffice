@@ -9,6 +9,7 @@ import org.apache.http.client.ClientProtocolException;
 import sk.village.office.communication.AssetsClient;
 import sk.village.office.communication.URLBuilder;
 import sk.village.office.communication.WebClient;
+import sk.village.office.db.DBHelper;
 import sk.village.office.parsers.AtriumParser;
 import sk.village.office.parsers.MayorParser;
 import sk.village.office.parsers.NewsParser;
@@ -24,11 +25,13 @@ public class DataAggregator {
 	private static DataAggregator instance;
 	private static Context context;
 	private static Configuration config;
+	public static DBHelper database;
 	
 	
 	private DataAggregator(Context cont){
 		context = cont;
 		config = Configuration.getInstance(cont);
+		database = DBHelper.getInstance(cont);
 	}
 	
 	
@@ -101,9 +104,11 @@ public class DataAggregator {
 	
 	public boolean doesDataNeedToBeUpdated(int data_id){
 		if(Configuration.getInstance(context).isStaticData(data_id)){
-			
+			if(database.doesTableExist(data_id))
+				return false;
+			else
+				return true;
 		}
-		
 		return true;
 	}
 	

@@ -2,6 +2,9 @@ package sk.village.office.core;
 
 public class Constants {
 	
+	/****************************** place holders ******************************/
+	public static final String PLACEHOLDER_STRING = "{%s}";
+	
 	/****************************** Handler keys ******************************/
 	public static final int MESSAGE_SELECT_MAP 		= 0;
 	public static final int MESSAGE_SELECT_CONTACTS = 1;
@@ -34,8 +37,8 @@ public class Constants {
 	public static final String	KEYWORD_POLIT_PARTY		= "politicalParty";
 	public static final String	KEYWORD_PARLIAMENT		= "parliament";
 	
-	public static final String URL_BASE_ONLINE 	= "http://rozpocetmesta.sk/aplikacia_KE/{%s}.php";
-	public static final String URL_BASE_OFFLINE = "json/{%s}.json";
+	public static final String URL_BASE_ONLINE 	= "http://rozpocetmesta.sk/aplikacia_KE/"+PLACEHOLDER_STRING+".php";
+	public static final String URL_BASE_OFFLINE = "json/"+PLACEHOLDER_STRING+".json";
 	
 	public static final String URL_MAYOR 		= "mayor";
 	public static final String URL_PLACES 		= "places";
@@ -59,7 +62,11 @@ public class Constants {
 	public static final int GET_CONTENT_ATRIUM		     = 5;
 	public static final int GET_CONTENT_PARLIAMENT	     = 6;
 	
-	/****************************** place holders ******************************/
-	public static final String PLACEHOLDER_STRING = "{%s}";
+	
+	
+	/****************************** delays ******************************/
+	public static final int DELAY_1S = 1000;
+	public static final int DELAY_2S = 2000;
+	public static final int DELAY_3S = 3000;
 	
 }

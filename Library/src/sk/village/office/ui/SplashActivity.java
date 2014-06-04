@@ -1,12 +1,15 @@
 package sk.village.office.ui;
 
 import sk.village.office.R;
+import sk.village.office.core.Configuration;
 import sk.village.office.core.Constants;
 import sk.village.office.core.DataAggregator;
 import sk.village.office.util.Log;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -22,6 +25,16 @@ public class SplashActivity extends BaseActivity{
 		setElements();
 		
 		new InitializationTask().execute();
+	}
+	
+	private void startAppDelayed(int SPLASH_DELAY){
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				progressBar.setVisibility(View.INVISIBLE);
+				startMainActivity();
+			}
+		}, SPLASH_DELAY);
 	}
 	
 	private void setElements(){
@@ -47,22 +60,22 @@ public class SplashActivity extends BaseActivity{
 		protected Void doInBackground(Void... params) {
 			try {
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_MAYOR))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_MAYOR))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_MAYOR));
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_PLACES))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_PLACES))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PLACES));
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_NEWS))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_NEWS))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_NEWS));
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_OFFICE_BOARD))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_OFFICE_BOARD))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_OFFICE_BOARD));
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_ATRIUM))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_ATRIUM))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM));
 				
-				if(!database.doesTableExist(Constants.GET_CONTENT_PARLIAMENT))
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_PARLIAMENT))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PARLIAMENT));
 				
 			} catch (Exception e) {
@@ -79,8 +92,9 @@ public class SplashActivity extends BaseActivity{
 		
 		@Override
 		protected void onPostExecute(Void result) {
-			progressBar.setVisibility(View.INVISIBLE);
-			startMainActivity();
+			
+			// TODO: nakodit timer, ktory spustim pri onpre ex, pobezi v threade a kazdu sekundu pripocitam 1. v onpost ho stopnem. 
+			startAppDelayed(Constants.DELAY_1S);
 		}
 	
 	}

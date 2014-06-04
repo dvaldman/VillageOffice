@@ -48,7 +48,7 @@ public class DBHelper extends SQLiteOpenHelper
 			
 		}
 		catch (SQLiteException e){
-			Log.e("db error "+e.getMessage());
+			Log.v("db error "+e.getMessage());
 			return false;
 		}
 		
