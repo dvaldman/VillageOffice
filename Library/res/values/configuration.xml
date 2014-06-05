@@ -25,14 +25,12 @@
    
     <array name="main_menu">
         <item>@string/news</item>
-        <item>@string/traffic_parking</item>
-        <item>@string/matrika</item>
         <item>@string/atrium</item>
+         <item>@string/office_board</item>
         <item>@string/report</item>
     </array>
     
     <array name="office_menu">
-        <item>@string/office_board</item>
         <item>@string/mayor</item>
         <item>@string/assholes</item>
     </array>

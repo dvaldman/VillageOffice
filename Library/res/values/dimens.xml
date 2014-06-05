@@ -52,4 +52,7 @@
     <dimen name="report_photos_margin">5dp</dimen>
     <dimen name="report_photos_size">150dp</dimen>
     
+    <!-- member detail -->
+    <dimen name="member_detail_marginTop">10dp</dimen>
+    
 </resources>

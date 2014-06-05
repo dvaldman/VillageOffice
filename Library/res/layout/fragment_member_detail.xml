@@ -6,8 +6,6 @@
         android:background="@color/app_dark_blue"
         >
 
-   
-    
     <LinearLayout 
         android:background="@color/app_white"
         android:layout_width="fill_parent"
@@ -16,6 +14,14 @@
         android:layout_marginTop="@dimen/news_detail_margin_top"
         android:layout_marginLeft="@dimen/news_detail_margin_sides"
         android:layout_marginRight="@dimen/news_detail_margin_sides">
+
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/member_detail_marginTop"
+            android:src="@drawable/cavo"
+            android:contentDescription="@string/app_name"/>
         
 		    <TextView
 		        android:id="@+id/member_detail_name"
@@ -58,6 +64,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/news_detail_exit_top"
         android:layout_marginRight="@dimen/news_detail_exit_right"
+        android:contentDescription="@string/app_name"
         />
     
 
