@@ -1,22 +1,36 @@
 package sk.village.office.ui.fragments;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import sk.village.office.R;
 import sk.village.office.core.Constants;
+import sk.village.office.core.GPSProvider;
 import sk.village.office.map.PlacesGroup;
 import sk.village.office.model.ContentHolder;
 import sk.village.office.model.Place;
+import sk.village.office.parsers.DirectionsJSONParser;
 import sk.village.office.util.AddressProvider;
 import sk.village.office.util.Log;
+import sk.village.office.util.Util;
+import android.app.AlertDialog;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -41,8 +55,11 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 
 public class PlacesFragment extends Fragment implements OnClickListener{
@@ -52,6 +69,10 @@ public class PlacesFragment extends Fragment implements OnClickListener{
     public static boolean isSavedInstance = false;
     public static int lastSection = 1;
     private static View view;
+    
+    List<LatLng> polyz;
+	GPSProvider gpsProvider;
+	AlertDialog alert;
    
     GoogleMap map;
     private static Map<Marker, Place> markerMap = new HashMap<Marker, Place>();
@@ -86,16 +107,30 @@ public class PlacesFragment extends Fragment implements OnClickListener{
             view = inflater.inflate(R.layout.fragment_map, container, false);
         } catch (InflateException e) {}
         
-        map = ((SupportMapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap(); 
-		
-        try {
-			MapsInitializer.initialize(this.getActivity());
-		} catch (GooglePlayServicesNotAvailableException e) {}
-		
-		setListeners();
-        setLastMapState();
+        new InitMap().execute();
         
         return view;
+    }
+    
+    private class InitMap extends AsyncTask<Void, Void, Void>{
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			 map = ((SupportMapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap(); 
+				
+		        try {
+					MapsInitializer.initialize(PlacesFragment.this.getActivity());
+				} catch (GooglePlayServicesNotAvailableException e) {}
+				
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(Void result) {
+			setListeners();
+	        setLastMapState();
+		}
+    	
     }
     
     private void setListeners(){
@@ -142,7 +177,7 @@ public class PlacesFragment extends Fragment implements OnClickListener{
     	if(map!=null && isSavedInstance == false) 
     		lastSection = 1;
         setButtonIcons();
-        setSelectedMarkers();
+        setSelectedMarkers(true);
         
     }
     
@@ -153,14 +188,15 @@ public class PlacesFragment extends Fragment implements OnClickListener{
     
 	
     
-    private void setUpMap(PlacesGroup markerGroup, List<Place> places){
+    private void setUpMap(PlacesGroup markerGroup, List<Place> places, boolean zoomMap){
         map.setInfoWindowAdapter(infoWindowAdapter);
         map.setOnInfoWindowClickListener(new InfoWindowClick());
         map.setOnMarkerClickListener(markerClick);
         map.setMyLocationEnabled(true);
         markerMap = markerGroup.addItemsToMap(map,places,getActivity());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(CITY_CENTER, 14);
-        map.animateCamera(cameraUpdate);
+        if(zoomMap)
+        	map.animateCamera(cameraUpdate);
     }
     
     public final OnMarkerClickListener markerClick = new OnMarkerClickListener() {
@@ -201,7 +237,7 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 			if(lastAddress == null){
 				TVaddress.setText("H¼ad‡m adresu");
 				AddressCallback adrcall = new AddressCallback(marker);
-				AddressProvider.getAddressForLatLong(getActivity(), marker.getPosition(), AddressProvider.STREET_CITY_COUNTRY,adrcall);
+				AddressProvider.getAddressForLatLong(getActivity(), marker.getPosition(), AddressProvider.STREET_CITY,adrcall);
 			}
 			else
 				TVaddress.setText(lastAddress);
@@ -243,16 +279,17 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 		public class InfoWindowClick implements OnInfoWindowClickListener {
 
 		  @Override
-		  public void onInfoWindowClick(Marker arg0) {
-		   arg0.hideInfoWindow();
-//		   Fragment fragment = new ArticleFragment();
-//		   ContentHolder.item = markerMap.get(arg0);
-//		   MainActivity.disableExit = true;
-//		   Bundle args = new Bundle();
-//		   if(ContentHolder.item instanceof CityGuideItem)
-//			   args.putBoolean(KosiceApplication.CITY_GUIDE_ITEM, true);
-//		   fragment.setArguments(args);
-//		   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).addToBackStack("tag").commit();
+		  public void onInfoWindowClick(Marker marker) {
+		   marker.hideInfoWindow();
+		   LatLng fromPosition = GPSProvider.getInstance(getActivity()).getLatLong();
+		   LatLng toPosition = marker.getPosition();
+		   map.clear();
+		   setSelectedMarkers(false);
+		   
+
+		   String url = Util.getDirectionsUrl(fromPosition, toPosition);
+		   DownloadTask downloadTask = new DownloadTask();
+		   downloadTask.execute(url);
 		   
 		  }
 		  
@@ -270,28 +307,159 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 		if(v.getId() == R.id.button4)
 			lastSection = 4;
 		
-		setSelectedMarkers();
+		setSelectedMarkers(true);
 		setButtonIcons();
 	}
 	
-	private void setSelectedMarkers(){
+	private void setSelectedMarkers(boolean zoomMap){
 		switch (lastSection) {
 		case 1:
-			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces1());
+			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces1(),zoomMap);
 			break;
 		case 2:
-			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces2());
+			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces2(),zoomMap);
 			break;
 		case 3:
-			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces3());
+			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces3(),zoomMap);
 			break;
 		case 4:
-			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces4());
+			if(map!=null) setUpMap(new PlacesGroup(),ContentHolder.getInstance(getActivity()).getPlaces4(),zoomMap);
 			break;
 		}
 		
 	}
 	
 	
+	private class DownloadTask extends AsyncTask<String, Void, String>{			
+		
+		// Downloading data in non-ui thread
+		@Override
+		protected String doInBackground(String... url) {
+				
+			// For storing data from web service
+			String data = "";
+					
+			try{
+				// Fetching the data from web service
+				data = downloadUrl(url[0]);
+			}catch(Exception e){
+				
+			}
+			return data;		
+		}
+		
+		// Executes in UI thread, after the execution of
+		// doInBackground()
+		@Override
+		protected void onPostExecute(String result) {			
+			super.onPostExecute(result);			
+			
+			ParserTask parserTask = new ParserTask();
+			
+			// Invokes the thread for parsing the JSON data
+			parserTask.execute(result);
+				
+		}		
+	}
 	
+	/** A class to parse the Google Places in JSON format */
+    private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >{
+    	
+    	// Parsing the data in non-ui thread    	
+		@Override
+		protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
+			
+			JSONObject jObject;	
+			List<List<HashMap<String, String>>> routes = null;			           
+            
+            try{
+            	jObject = new JSONObject(jsonData[0]);
+            	DirectionsJSONParser parser = new DirectionsJSONParser();
+            	
+            	// Starts parsing data
+            	routes = parser.parse(jObject);    
+            }catch(Exception e){
+            	e.printStackTrace();
+            }
+            return routes;
+		}
+		
+		// Executes in UI thread, after the parsing process
+		@Override
+		protected void onPostExecute(List<List<HashMap<String, String>>> result) {
+			ArrayList<LatLng> points = null;
+			PolylineOptions lineOptions = null;
+			MarkerOptions markerOptions = new MarkerOptions();
+			
+			
+			// Traversing through all the routes
+			for(int i=0;i<result.size();i++){
+				points = new ArrayList<LatLng>();
+				lineOptions = new PolylineOptions();
+				
+				// Fetching i-th route
+				List<HashMap<String, String>> path = result.get(i);
+				
+				// Fetching all the points in i-th route
+				for(int j=0;j<path.size();j++){
+					HashMap<String,String> point = path.get(j);					
+					
+					double lat = Double.parseDouble(point.get("lat"));
+					double lng = Double.parseDouble(point.get("lng"));
+					LatLng position = new LatLng(lat, lng);	
+					
+					points.add(position);						
+				}
+				
+				// Adding all the points in the route to LineOptions
+				lineOptions.addAll(points);
+				lineOptions.width(5);
+				lineOptions.color(Color.RED);	
+				
+			}
+			
+			// Drawing polyline in the Google Map for the i-th route
+			map.addPolyline(lineOptions);							
+		}			
+    }   
+
+    private String downloadUrl(String strUrl) throws IOException{
+        String data = "";
+        InputStream iStream = null;
+        HttpURLConnection urlConnection = null;
+        try{
+                URL url = new URL(strUrl);
+
+                // Creating an http connection to communicate with url 
+                urlConnection = (HttpURLConnection) url.openConnection();
+
+                // Connecting to url 
+                urlConnection.connect();
+
+                // Reading data from url 
+                iStream = urlConnection.getInputStream();
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
+
+                StringBuffer sb  = new StringBuffer();
+
+                String line = "";
+                while( ( line = br.readLine())  != null){
+                        sb.append(line);
+                }
+                
+                data = sb.toString();
+
+                br.close();
+
+        }catch(Exception e){
+                
+        }finally{
+                iStream.close();
+                urlConnection.disconnect();
+        }
+        return data;
+     }
+
+		
 }

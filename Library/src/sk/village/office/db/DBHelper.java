@@ -55,6 +55,12 @@ public class DBHelper extends SQLiteOpenHelper
 		return true;
 	}
 	
+	public void clearTable(String tableName){
+		SQLiteDatabase db = this.getWritableDatabase();
+		String deleteSQL = "DELETE FROM " + tableName;
+		db.execSQL(deleteSQL);
+	}
+	
 	public int insertValuesIntoTable(String table, ContentValues vals){
 		SQLiteDatabase db = this.getWritableDatabase();
 		

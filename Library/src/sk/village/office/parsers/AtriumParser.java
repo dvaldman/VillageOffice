@@ -36,7 +36,8 @@ public class AtriumParser {
 		boolean result = false;
 		try{
 			JSONObject json = new JSONObject(this.response);
-			database.createTable(Tables.Atrium.CREATE_TABLE);
+			if(!database.createTable(Tables.Atrium.CREATE_TABLE))
+				database.clearTable(Tables.Atrium.TABLE_NAME);
 			parseNews(json.getJSONArray(Constants.KEYWORD_NEWS));
 			result = true;
 			

@@ -25,6 +25,7 @@ public class ContentHolder {
 	private List<New> atrium;
 	
 	private List<Member> members;
+	private Mayor mayor;
 	
 	private static ContentHolder instance;
 	private static Context context;
@@ -215,5 +216,30 @@ public class ContentHolder {
         return members;
 	}
 	
+	public Mayor getMayor(){
+		if(mayor == null)
+			mayor = initMayor();
+		return mayor;
+	}
+	
+	public Mayor initMayor(){
+		
+		Cursor c = DBHelper.getInstance(context).getResultsFromSingleTable(
+        		Tables.Mayor.TABLE_NAME,
+        		null,
+        		null);
+			
+		Mayor newMember = null;
+        if(c.moveToFirst()){
+        	do{
+	        	newMember = new Mayor();
+	        	newMember.setName(c.getString(c.getColumnIndex(Tables.Mayor.NAME)));
+	        	newMember.setTelNumber(c.getString(c.getColumnIndex(Tables.Mayor.TEL_NUM)));
+	        	newMember.setEmail(c.getString(c.getColumnIndex(Tables.Mayor.MAIL)));
+	        	newMember.setDescription(c.getString(c.getColumnIndex(Tables.Mayor.DESCRIPTION)));
+        	}while(c.moveToNext());
+    	}
+        return newMember;
+	}
 
 }

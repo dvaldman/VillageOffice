@@ -36,7 +36,8 @@ public class OfficeBoardParser {
 		boolean result = false;
 		try{
 			JSONObject json = new JSONObject(this.response);
-			database.createTable(Tables.OfficeBoard.CREATE_TABLE);
+			if(!database.createTable(Tables.OfficeBoard.CREATE_TABLE))
+				database.clearTable(Tables.OfficeBoard.TABLE_NAME);
 			parseNews(json.getJSONArray(Constants.KEYWORD_NEWS));
 			result = true;
 			

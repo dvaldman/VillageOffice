@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="300dp"
-        android:layout_height="fill_parent" 
-        android:background="@android:color/transparent">
-<LinearLayout 
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-   
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="150dp"
-        android:singleLine="true"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textColor="@color/app_main_text_color"
-        android:background="@color/app_light_blue"
-		 />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="150dp"
-        android:singleLine="true"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        android:text="adresa"
-        android:textColor="@color/app_light_blue"
-        android:background="@color/app_main_text_color" />
-</LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@color/app_blue"
+	    android:padding="2dp">
+	   
+	    <TextView
+	        android:id="@+id/title"
+	        android:layout_width="@dimen/marker_width"
+	        android:singleLine="true"
+	        android:layout_height="wrap_content"
+	        android:textStyle="bold"
+	        android:ellipsize="marquee"
+	        android:maxLines="1"
+	        android:textColor="@color/app_main_text_color"
+	        android:background="@color/app_light_blue"
+	        android:paddingBottom="@dimen/marker_padding_top_bottom"
+	        android:paddingTop="@dimen/marker_padding_top_bottom"
+	        android:paddingLeft="@dimen/marker_padding_sides"
+	    	android:paddingRight="@dimen/marker_padding_sides"
+			 />
+	
+	    <TextView
+	        android:layout_below="@+id/title"
+	        android:id="@+id/description"
+	        android:layout_width="@dimen/marker_width"
+	        android:singleLine="true"
+	        android:layout_height="wrap_content"
+	        android:ellipsize="marquee" 
+			android:lines="1"
+			android:scrollHorizontally="true"
+	        android:textColor="@color/app_light_blue"
+	        android:background="@color/app_main_text_color" 
+	        android:paddingBottom="@dimen/marker_padding_top_bottom"
+	        android:paddingTop="@dimen/marker_padding_top_bottom"
+	        android:paddingLeft="@dimen/marker_padding_sides"
+	    	android:paddingRight="@dimen/marker_padding_sides"/>
+	    
+	    <ImageView 
+	        android:id="@+id/find_route"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/marker_find_route"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="120dp"
+	        android:layout_centerVertical="true"/>
 </RelativeLayout>
 

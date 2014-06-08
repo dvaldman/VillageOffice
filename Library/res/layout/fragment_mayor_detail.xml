@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_dark_blue"
+        >
+
+    <LinearLayout 
+        android:background="@color/app_white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/news_detail_margin_top"
+        android:layout_marginLeft="@dimen/news_detail_margin_sides"
+        android:layout_marginRight="@dimen/news_detail_margin_sides">
+        
+        <LinearLayout 
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/member_detail_marginTop">
+            
+            <ImageView 
+            android:id="@+id/meyor_photo"
+            android:layout_width="@dimen/member_photo_w"
+            android:layout_height="@dimen/member_photo_h"
+            android:contentDescription="@string/app_name"
+            android:background="@drawable/mayor"
+            android:layout_marginLeft="5dp"/>
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp">
+            
+			    <TextView
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center_horizontal"
+					android:textColor="@color/app_blue"
+					android:textSize="@dimen/mayor_title_text_size"
+					android:text="@string/mayor_title"
+		         />
+				<TextView
+			        android:id="@+id/mayor_name"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center_horizontal"
+					android:textColor="@color/basic_text"
+					android:textSize="@dimen/mayor_name_text"
+		         />
+				
+				<Button
+			        android:id="@+id/mayor_tel"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:textColor="@color/member_detail_value_text"
+					android:textSize="@dimen/mayor_contact_text_size"
+					android:drawableLeft="@drawable/ico_tel"
+					android:padding="1dp"
+					android:layout_marginTop="@dimen/mayor_contact_text_margin_top"
+					android:background="@android:color/transparent"
+					android:contentDescription="@string/app_name"
+		         />
+				
+				<Button
+			        android:id="@+id/mayor_mail"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:textColor="@color/member_detail_value_text"
+					android:textSize="@dimen/mayor_contact_text_size"
+					android:drawableLeft="@drawable/ico_mail"
+					android:padding="1dp"
+					android:layout_marginTop="@dimen/mayor_contact_text_margin_top"
+					android:background="@android:color/transparent"
+					android:contentDescription="@string/app_name"
+		         />
+				
+			</LinearLayout>
+		</LinearLayout>
+			
+			<ScrollView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent">
+			    <TextView 
+			        android:padding="@dimen/news_detail_long_desc_padding"
+			        android:id="@+id/mayor_desc"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        />
+			</ScrollView>
+        
+    </LinearLayout>
+    
+     <ImageButton 
+        android:id="@+id/exit_button"
+        android:background="@drawable/button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/news_detail_exit_top"
+        android:layout_marginRight="@dimen/news_detail_exit_right"
+        />
+    
+
+</RelativeLayout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@drawable/menubtn_bg_act"
+        android:layout_marginTop="@dimen/header_top_margin"
+        android:textSize="@dimen/header_text_size"
+        android:textColor="@color/app_blue"
+        android:paddingLeft="@dimen/header_padding_left"
+        android:gravity="center_vertical"
+        />
+    
+    
+        
+        
+        <ScrollView 
+			    android:layout_below="@+id/header"
+		        android:background="@color/app_white"
+		        android:layout_width="fill_parent"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical"
+		        android:layout_marginTop="@dimen/contacts_margin_top"
+		        android:layout_marginLeft="@dimen/news_detail_margin_sides"
+		        android:layout_marginRight="@dimen/news_detail_margin_sides"
+		        >
+			
+        	    <LinearLayout 
+		            android:orientation="vertical"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:paddingBottom="10dp">
+		            
+        	        
+<!-- header -->
+		               <TextView
+		                    android:layout_marginTop="@dimen/member_detail_marginTop"
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+							android:textColor="@color/app_blue"
+							android:textSize="@dimen/contacts_main_caption"
+							android:text="@string/contacts_main_caption"
+				         />
+						<TextView
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+							android:textColor="@color/app_black"
+							android:textSize="@dimen/contacts_main_subcaptions"
+							android:text="@string/address_line1"
+				         />
+						<TextView
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+							android:textColor="@color/app_black"
+							android:textSize="@dimen/contacts_main_subcaptions"
+							android:text="@string/address_line2"
+				         />
+						
+						
+						
+<!-- mayors office -->
+						<TextView
+						    android:layout_marginTop="@dimen/contacts_caption_margin"
+						    android:layout_marginBottom="@dimen/contacts_caption_margin"
+						    android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+							android:textColor="@color/app_blue"
+							android:textSize="@dimen/contacts_main_subcaptions"
+							android:text="@string/contacts_mayors_office"
+				         />
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_tel"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:id="@+id/mayors_office_tel"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/mayors_office_tel"
+    							android:layout_weight="8"
+						        />
+						    
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_fax"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView
+						        android:id="@+id/mayors_office_fax" 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/mayors_office_fax"
+    							android:layout_weight="8"
+						        />
+						    
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_mail"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:id="@+id/mayors_office_mail"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/mayors_office_mail"
+    							android:layout_weight="8"
+						        />
+						    
+						</LinearLayout>
+						
+						
+						<LinearLayout 
+						    android:layout_marginTop="@dimen/contacts_section_offset"
+						    android:layout_marginBottom="@dimen/contacts_section_offset"
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="vertical">
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_matrika"
+						        />
+						    
+						    <TextView 
+						        android:id="@+id/matrika_tel"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/matrika_tel"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_checking"
+						        />
+						    
+						    <TextView 
+						        android:id="@+id/checking_tel"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/checking_tel"
+						        />
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_evidence"
+						        />
+						    
+						    <TextView
+						        android:id="@+id/evidence_tel" 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/evidence_tel"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_social"
+						        />
+						    
+						    <TextView 
+						        android:id="@+id/social_tel"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_link"
+    							android:text="@string/social_tel"
+						        />
+						</LinearLayout>
+						
+<!-- hours -->
+						<TextView
+						    android:layout_marginTop="@dimen/contacts_caption_margin"
+						    android:layout_marginBottom="@dimen/contacts_caption_margin"
+						    android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+							android:textColor="@color/app_blue"
+							android:textSize="@dimen/contacts_main_subcaptions"
+							android:text="@string/contacts_hours"
+				         />
+						
+						
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_monday"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/openning_mo"
+    							android:layout_weight="8"
+						        />
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_tuesday"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/openning_tu"
+    							android:layout_weight="8"
+						        />
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_wednesday"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/openning_we"
+    							android:layout_weight="8"
+						        />
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_thursday"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/openning_th"
+    							android:layout_weight="8"
+						        />
+						</LinearLayout>
+						
+						<LinearLayout 
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    android:orientation="horizontal">
+						    <TextView 
+						        android:layout_width="@dimen/contacts_mayors_office_first_column"
+						        android:layout_height="wrap_content"
+    							android:textStyle="bold"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/contacts_friday"
+    							android:layout_weight="2"
+						        />
+						    
+						    <TextView 
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+    							android:textSize="@dimen/contacts_text"
+    							android:textColor="@color/app_black"
+    							android:text="@string/openning_fr"
+    							android:layout_weight="8"
+						        />
+						</LinearLayout>
+					
+				</LinearLayout>
+		</ScrollView>
+        
+</RelativeLayout>

@@ -2,6 +2,8 @@ package sk.village.office.core;
 
 import java.util.List;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -83,6 +85,10 @@ public class GPSProvider {
 	public double getLongitude(){
 		getUpdatedCord();
 		return mLongitude;
+	}
+	
+	public LatLng getLatLong(){
+		return new LatLng(getLatitude(), getLongitude());
 	}
 
 	

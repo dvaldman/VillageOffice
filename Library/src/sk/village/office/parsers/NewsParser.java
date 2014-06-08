@@ -36,7 +36,10 @@ public class NewsParser {
 		boolean result = false;
 		try{
 			JSONObject json = new JSONObject(this.response);
-			database.createTable(Tables.News.CREATE_TABLE);
+
+			if(!database.createTable(Tables.News.CREATE_TABLE))
+				database.clearTable(Tables.News.TABLE_NAME);
+			
 			parseNews(json.getJSONArray(Constants.KEYWORD_NEWS));
 			result = true;
 			

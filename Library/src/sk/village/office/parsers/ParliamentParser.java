@@ -37,7 +37,8 @@ public class ParliamentParser {
 		boolean result = false;
 		try{
 			JSONObject json = new JSONObject(this.response);
-			database.createTable(Tables.Parliament.CREATE_TABLE);
+			if(!database.createTable(Tables.Parliament.CREATE_TABLE))
+				database.clearTable(Tables.Parliament.TABLE_NAME);
 			parseNews(json.getJSONArray(Constants.KEYWORD_PARLIAMENT));
 			result = true;
 			

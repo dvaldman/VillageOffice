@@ -44,4 +44,33 @@
     <string name="grafik">Grafika: Martin Koniar</string>
     <string name="copyright">Copyright \u00A9  2014 Košice Západ</string>
     
+<!--     MEMBER DETAIL 	-->
+	<string name="member_age">Vek:</string>
+	<string name="member_job">Povolanie:</string>
+	<string name="member_vote_location">Voľebný obvod:</string>
+	<string name="member_time_interval">Funkčné obdobie:</string>
+	<string name="member_coalition">Kandidoval za koalíciu:</string>
+	<string name="member_function">Funkcia:</string>
+	<string name="member_party">Poslanecký klub:</string>
+	
+<!--     MAYOR DETAIL 	-->
+	<string name="mayor_title">Starosta mestskej časti:</string>
+	
+<!--     CONTACTS 	-->
+	<string name="contacts_main_caption">MIESTNY ÚRAD KOŠICE - ZÁPAD</string>	
+	<string name="contacts_mayors_office">Kancelária starostu</string>
+	<string name="contacts_tel">Telefón: </string>
+	<string name="contacts_fax">FAX: </string>
+	<string name="contacts_mail">E-mail: </string>
+	<string name="contacts_matrika">Matrika rodná, sobášna a úmrtná:</string>
+	<string name="contacts_checking">Overovanie listín a podpisov na listinách:</string>	
+	<string name="contacts_evidence">Evidencia obyvateľov:</string>
+	<string name="contacts_social">Sociílna oblasť:</string>
+	<string name="contacts_hours">Úradné hodiny pre občanov nepretržite počas všetkých pracovných dní</string>
+	<string name="contacts_monday">Pondelok: </string>
+	<string name="contacts_tuesday">Utorok: </string>
+	<string name="contacts_wednesday">Streda: </string>
+	<string name="contacts_thursday">Štvrtok: </string>
+	<string name="contacts_friday">Piatok: </string>
+    
 </resources>

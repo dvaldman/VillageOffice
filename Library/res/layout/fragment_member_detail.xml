@@ -12,15 +12,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="@dimen/news_detail_margin_top"
-        android:layout_marginLeft="@dimen/news_detail_margin_sides"
-        android:layout_marginRight="@dimen/news_detail_margin_sides">
+        android:layout_marginLeft="@dimen/member_detail_margin_sides"
+        android:layout_marginRight="@dimen/member_detail_margin_sides">
 
         <ImageView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/member_photo"
+            android:layout_width="@dimen/member_photo_w"
+            android:layout_height="@dimen/member_photo_h"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/member_detail_marginTop"
-            android:src="@drawable/cavo"
             android:contentDescription="@string/app_name"/>
         
 		    <TextView
@@ -32,25 +32,171 @@
 				android:textSize="@dimen/main_menu_text"
 				android:gravity="center_horizontal"
 	         />
-			<TextView
-		        android:id="@+id/news_detail_title"
-		        android:layout_width="fill_parent"
+			<Button
+		        android:id="@+id/member_detail_mail"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center_horizontal"
 		        android:gravity="center_horizontal"
 				android:textColor="@color/app_blue"
 				android:textSize="@dimen/main_menu_text"
+				android:drawableLeft="@drawable/ico_mail"
+				android:padding="1dp"
+				android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				android:background="@android:color/transparent"
+				android:contentDescription="@string/app_name"
 	         />
 			
 			<ScrollView 
 			    android:layout_width="fill_parent"
-			    android:layout_height="fill_parent">
-			    <TextView 
-			        android:padding="@dimen/news_detail_long_desc_padding"
-			        android:id="@+id/news_detail_long_desc"
-			        android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_marginTop="@dimen/member_detail_text_margin_top">
+			    <LinearLayout 
+			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
-			        />
+			        android:orientation="vertical"
+			        android:layout_gravity="center_horizontal"
+			        android:gravity="center_horizontal"
+			        android:padding="5dp">
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_age"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_age"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_job"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_job"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_vote_location"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_vote_location"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_time_interval"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_time_interval"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_coalition"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_coalition"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_function"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_function"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				    
+				    <TextView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:text="@string/member_party"
+				        android:layout_marginTop="@dimen/member_detail_text_margin_top"
+				        android:textSize="@dimen/member_detail_caption_text_size"
+				        android:textColor="@color/member_detail_caption_text"
+				        />
+				    
+				    <TextView 
+				        android:id="@+id/member_party"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_horizontal"
+				        android:layout_marginTop="@dimen/member_detail_value_margin_top"
+				        android:textSize="@dimen/member_detail_value_text_size"
+				        android:textColor="@color/member_detail_value_text"
+				        />
+				</LinearLayout>		    
 			</ScrollView>
         
     </LinearLayout>
@@ -63,7 +209,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/news_detail_exit_top"
-        android:layout_marginRight="@dimen/news_detail_exit_right"
+        android:layout_marginRight="@dimen/member_detail_exit_right"
         android:contentDescription="@string/app_name"
         />
     

@@ -13,6 +13,7 @@ import sk.village.office.core.GPSProvider;
 import sk.village.office.ui.BaseActivity;
 import sk.village.office.util.AddressProvider;
 import sk.village.office.util.Log;
+import sk.village.office.util.ReportMailBuilder;
 import sk.village.office.util.Util;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -50,6 +51,7 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	private LayoutInflater inflater;
 	private static ArrayList<Bitmap> photos;
 	private EditText et;
+	private TextView addressBar;
 	private static String report="";
 	
 	
@@ -70,23 +72,11 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		((TextView)v.findViewById(R.id.header)).setText(getActivity().getResources().getString(R.string.report).toUpperCase());
 	    photosContainer = (LinearLayout) v.findViewById(R.id.photos_container);
 		v.findViewById(R.id.send_report).setOnClickListener(this);
-	    
+		addressBar = ((TextView)v.findViewById(R.id.report_address));
+		
 	    LatLng pos = new LatLng(GPSProvider.getInstance(getActivity()).getLatitude(), GPSProvider.getInstance(getActivity()).getLongitude());
-//	    Callback callback = new Callback(){
-//	    	@Override
-//	    	public boolean handleMessage(Message msg) {
-//	    		
-//	    		switch (msg.what) {
-//				case Constants.MESSAGE_GET_ADDRESS:
-//					((TextView)v.findViewById(R.id.report_address)).setText((String)msg.obj);
-//					return true;
-//
-//				}
-//	    	return false;
-//	    	}
-//	    };
 	    
-	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY_COUNTRY,((TextView)v.findViewById(R.id.report_address)));
+	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,addressBar);
 		
 	    et = (EditText) v.findViewById(R.id.report_desc);
 	    et.addTextChangedListener(new TextWatcher() {
@@ -217,10 +207,15 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	
 	private void reportToMail(){
 		Intent i = new Intent(Intent.ACTION_SEND_MULTIPLE);
+		
+		ReportMailBuilder mail = new ReportMailBuilder()
+								.setMailPosition(addressBar.getText().toString())
+								.setMailText(et.getText().toString());
+		
 		i.setType("plain/text");
 		i.putExtra(Intent.EXTRA_EMAIL  , new String[]{Configuration.mailForReport});
 		i.putExtra(Intent.EXTRA_SUBJECT, getActivity().getResources().getString(R.string.problem_report));
-		i.putExtra(Intent.EXTRA_TEXT   , et.getText());
+		i.putExtra(Intent.EXTRA_TEXT   , mail.getMail());
 		
 		ArrayList<Uri> uris = new ArrayList<Uri>();
 		

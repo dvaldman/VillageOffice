@@ -148,11 +148,13 @@ containing a value of this type.
         public static int static_places=0x7f070001;
     }
     public static final class color {
+        public static int app_black=0x7f040015;
         public static int app_blue=0x7f04000a;
         public static int app_btns_bg_inactive=0x7f040011;
         public static int app_dark_blue=0x7f04000e;
         public static int app_light_blue=0x7f04000d;
-        public static int app_main_text_color=0x7f040013;
+        public static int app_link=0x7f040016;
+        public static int app_main_text_color=0x7f040017;
         public static int app_white=0x7f04000c;
         public static int app_yellow=0x7f04000b;
         public static int basic_text=0x7f040012;
@@ -168,10 +170,12 @@ containing a value of this type.
         public static int common_signin_btn_light_text_disabled=0x7f040006;
         public static int common_signin_btn_light_text_focused=0x7f040007;
         public static int common_signin_btn_light_text_pressed=0x7f040005;
-        public static int common_signin_btn_text_dark=0x7f040014;
-        public static int common_signin_btn_text_light=0x7f040015;
+        public static int common_signin_btn_text_dark=0x7f040018;
+        public static int common_signin_btn_text_light=0x7f040019;
         public static int main_menu_text_act=0x7f040010;
         public static int main_menu_text_inact=0x7f04000f;
+        public static int member_detail_caption_text=0x7f040013;
+        public static int member_detail_value_text=0x7f040014;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -185,6 +189,17 @@ containing a value of this type.
         public static int activity_vertical_margin=0x7f0a0001;
         public static int basic_text=0x7f0a0004;
         public static int blue_stripe=0x7f0a0009;
+        public static int contacts_caption=0x7f0a0034;
+        public static int contacts_caption_margin=0x7f0a0038;
+        public static int contacts_hours_first_column=0x7f0a0037;
+        public static int contacts_main_caption=0x7f0a0032;
+        public static int contacts_main_subcaptions=0x7f0a0033;
+        /**  contacts 
+         */
+        public static int contacts_margin_top=0x7f0a0031;
+        public static int contacts_mayors_office_first_column=0x7f0a0036;
+        public static int contacts_section_offset=0x7f0a0039;
+        public static int contacts_text=0x7f0a0035;
         public static int header_padding_left=0x7f0a0003;
         /**  global 
          */
@@ -201,27 +216,47 @@ containing a value of this type.
          */
         public static int map_marker_offset_x=0x7f0a0010;
         public static int map_marker_offset_y=0x7f0a0011;
-        public static int news_detail_exit_right=0x7f0a0018;
-        public static int news_detail_exit_top=0x7f0a0017;
-        public static int news_detail_long_desc_padding=0x7f0a0019;
-        public static int news_detail_margin_sides=0x7f0a0016;
+        public static int marker_padding_sides=0x7f0a0012;
+        public static int marker_padding_top_bottom=0x7f0a0013;
+        public static int marker_width=0x7f0a0014;
+        public static int mayor_contact_text_margin_top=0x7f0a002f;
+        public static int mayor_contact_text_size=0x7f0a0030;
+        public static int mayor_name_text=0x7f0a002e;
+        /**  mayor detail 
+         */
+        public static int mayor_title_text_size=0x7f0a002d;
+        public static int member_detail_caption_text_size=0x7f0a002b;
+        public static int member_detail_exit_right=0x7f0a0028;
+        public static int member_detail_marginTop=0x7f0a0025;
+        /**  member detail 
+         */
+        public static int member_detail_margin_sides=0x7f0a0024;
+        public static int member_detail_text_margin_top=0x7f0a0029;
+        public static int member_detail_value_margin_top=0x7f0a002a;
+        public static int member_detail_value_text_size=0x7f0a002c;
+        public static int member_photo_h=0x7f0a0027;
+        public static int member_photo_w=0x7f0a0026;
+        public static int news_detail_exit_right=0x7f0a001b;
+        public static int news_detail_exit_top=0x7f0a001a;
+        public static int news_detail_long_desc_padding=0x7f0a001c;
+        public static int news_detail_margin_sides=0x7f0a0019;
         /**  News Detail fragment 
          */
-        public static int news_detail_margin_top=0x7f0a0015;
-        public static int news_header_margin_btm=0x7f0a0014;
-        public static int news_thumbnail_margin=0x7f0a0013;
+        public static int news_detail_margin_top=0x7f0a0018;
+        public static int news_header_margin_btm=0x7f0a0017;
+        public static int news_thumbnail_margin=0x7f0a0016;
         /**  News ListItem 
          */
-        public static int news_thumbnail_size=0x7f0a0012;
-        public static int report_divider_height=0x7f0a001b;
-        public static int report_divider_margin_top_bottom=0x7f0a001c;
-        public static int report_edit_text=0x7f0a001e;
+        public static int news_thumbnail_size=0x7f0a0015;
+        public static int report_divider_height=0x7f0a001e;
+        public static int report_divider_margin_top_bottom=0x7f0a001f;
+        public static int report_edit_text=0x7f0a0021;
         /**  Report fragment 
          */
-        public static int report_marker_margin_right=0x7f0a001a;
-        public static int report_photos_margin=0x7f0a001f;
-        public static int report_photos_size=0x7f0a0020;
-        public static int report_title_text_size=0x7f0a001d;
+        public static int report_marker_margin_right=0x7f0a001d;
+        public static int report_photos_margin=0x7f0a0022;
+        public static int report_photos_size=0x7f0a0023;
+        public static int report_title_text_size=0x7f0a0020;
         /**  tabs 
          */
         public static int tab_height=0x7f0a0005;
@@ -240,119 +275,147 @@ containing a value of this type.
         public static int button_office=0x7f020007;
         public static int button_places=0x7f020008;
         public static int button_plus=0x7f020009;
-        public static int common_signin_btn_icon_dark=0x7f02000a;
-        public static int common_signin_btn_icon_disabled_dark=0x7f02000b;
-        public static int common_signin_btn_icon_disabled_focus_dark=0x7f02000c;
-        public static int common_signin_btn_icon_disabled_focus_light=0x7f02000d;
-        public static int common_signin_btn_icon_disabled_light=0x7f02000e;
-        public static int common_signin_btn_icon_focus_dark=0x7f02000f;
-        public static int common_signin_btn_icon_focus_light=0x7f020010;
-        public static int common_signin_btn_icon_light=0x7f020011;
-        public static int common_signin_btn_icon_normal_dark=0x7f020012;
-        public static int common_signin_btn_icon_normal_light=0x7f020013;
-        public static int common_signin_btn_icon_pressed_dark=0x7f020014;
-        public static int common_signin_btn_icon_pressed_light=0x7f020015;
-        public static int common_signin_btn_text_dark=0x7f020016;
-        public static int common_signin_btn_text_disabled_dark=0x7f020017;
-        public static int common_signin_btn_text_disabled_focus_dark=0x7f020018;
-        public static int common_signin_btn_text_disabled_focus_light=0x7f020019;
-        public static int common_signin_btn_text_disabled_light=0x7f02001a;
-        public static int common_signin_btn_text_focus_dark=0x7f02001b;
-        public static int common_signin_btn_text_focus_light=0x7f02001c;
-        public static int common_signin_btn_text_light=0x7f02001d;
-        public static int common_signin_btn_text_normal_dark=0x7f02001e;
-        public static int common_signin_btn_text_normal_light=0x7f02001f;
-        public static int common_signin_btn_text_pressed_dark=0x7f020020;
-        public static int common_signin_btn_text_pressed_light=0x7f020021;
-        public static int erb=0x7f020022;
-        public static int exit_act=0x7f020023;
-        public static int exit_inact=0x7f020024;
-        public static int header=0x7f020025;
-        public static int ic_launcher=0x7f020026;
-        public static int ico1_act=0x7f020027;
-        public static int ico1_inact=0x7f020028;
-        public static int ico2_act=0x7f020029;
-        public static int ico2_inact=0x7f02002a;
-        public static int ico3_act=0x7f02002b;
-        public static int ico3_inact=0x7f02002c;
-        public static int ico4_act=0x7f02002d;
-        public static int ico4_inact=0x7f02002e;
-        public static int ico5_act=0x7f02002f;
-        public static int ico5_inact=0x7f020030;
-        public static int info_passive=0x7f020031;
-        public static int loading=0x7f020032;
-        public static int marker=0x7f020033;
-        public static int marker2=0x7f020034;
-        public static int menubtn_bg_act=0x7f020035;
-        public static int menubtn_bg_inact=0x7f020036;
-        public static int poslanci_passive=0x7f020037;
-        public static int problem_add_photo_active=0x7f020038;
-        public static int problem_add_photo_passive=0x7f020039;
-        public static int problem_place_marker=0x7f02003a;
-        public static int problem_place_sign=0x7f02003b;
-        public static int splash=0x7f02003c;
-        public static int starosta_passive=0x7f02003d;
-        public static int subico1_act=0x7f02003e;
-        public static int subico1_inact=0x7f02003f;
-        public static int subico2_act=0x7f020040;
-        public static int subico2_inact=0x7f020041;
-        public static int subico3_act=0x7f020042;
-        public static int subico3_inact=0x7f020043;
-        public static int subico4_act=0x7f020044;
-        public static int subico4_inact=0x7f020045;
-        public static int subico5_act=0x7f020046;
-        public static int subico5_inact=0x7f020047;
-        public static int testpic=0x7f020048;
-        public static int volby_passive=0x7f020049;
+        public static int cavo=0x7f02000a;
+        public static int common_signin_btn_icon_dark=0x7f02000b;
+        public static int common_signin_btn_icon_disabled_dark=0x7f02000c;
+        public static int common_signin_btn_icon_disabled_focus_dark=0x7f02000d;
+        public static int common_signin_btn_icon_disabled_focus_light=0x7f02000e;
+        public static int common_signin_btn_icon_disabled_light=0x7f02000f;
+        public static int common_signin_btn_icon_focus_dark=0x7f020010;
+        public static int common_signin_btn_icon_focus_light=0x7f020011;
+        public static int common_signin_btn_icon_light=0x7f020012;
+        public static int common_signin_btn_icon_normal_dark=0x7f020013;
+        public static int common_signin_btn_icon_normal_light=0x7f020014;
+        public static int common_signin_btn_icon_pressed_dark=0x7f020015;
+        public static int common_signin_btn_icon_pressed_light=0x7f020016;
+        public static int common_signin_btn_text_dark=0x7f020017;
+        public static int common_signin_btn_text_disabled_dark=0x7f020018;
+        public static int common_signin_btn_text_disabled_focus_dark=0x7f020019;
+        public static int common_signin_btn_text_disabled_focus_light=0x7f02001a;
+        public static int common_signin_btn_text_disabled_light=0x7f02001b;
+        public static int common_signin_btn_text_focus_dark=0x7f02001c;
+        public static int common_signin_btn_text_focus_light=0x7f02001d;
+        public static int common_signin_btn_text_light=0x7f02001e;
+        public static int common_signin_btn_text_normal_dark=0x7f02001f;
+        public static int common_signin_btn_text_normal_light=0x7f020020;
+        public static int common_signin_btn_text_pressed_dark=0x7f020021;
+        public static int common_signin_btn_text_pressed_light=0x7f020022;
+        public static int erb=0x7f020023;
+        public static int exit_act=0x7f020024;
+        public static int exit_inact=0x7f020025;
+        public static int header=0x7f020026;
+        public static int ic_launcher=0x7f020027;
+        public static int ico1_act=0x7f020028;
+        public static int ico1_inact=0x7f020029;
+        public static int ico2_act=0x7f02002a;
+        public static int ico2_inact=0x7f02002b;
+        public static int ico3_act=0x7f02002c;
+        public static int ico3_inact=0x7f02002d;
+        public static int ico4_act=0x7f02002e;
+        public static int ico4_inact=0x7f02002f;
+        public static int ico5_act=0x7f020030;
+        public static int ico5_inact=0x7f020031;
+        public static int ico_mail=0x7f020032;
+        public static int ico_tel=0x7f020033;
+        public static int info_passive=0x7f020034;
+        public static int loading=0x7f020035;
+        public static int marker=0x7f020036;
+        public static int marker2=0x7f020037;
+        public static int marker_find_route=0x7f020038;
+        public static int mayor=0x7f020039;
+        public static int menubtn_bg_act=0x7f02003a;
+        public static int menubtn_bg_inact=0x7f02003b;
+        public static int poslanci_passive=0x7f02003c;
+        public static int problem_add_photo_active=0x7f02003d;
+        public static int problem_add_photo_passive=0x7f02003e;
+        public static int problem_place_marker=0x7f02003f;
+        public static int problem_place_sign=0x7f020040;
+        public static int splash=0x7f020041;
+        public static int starosta_passive=0x7f020042;
+        public static int subico1_act=0x7f020043;
+        public static int subico1_inact=0x7f020044;
+        public static int subico2_act=0x7f020045;
+        public static int subico2_inact=0x7f020046;
+        public static int subico3_act=0x7f020047;
+        public static int subico3_inact=0x7f020048;
+        public static int subico4_act=0x7f020049;
+        public static int subico4_inact=0x7f02004a;
+        public static int subico5_act=0x7f02004b;
+        public static int subico5_inact=0x7f02004c;
+        public static int testpic=0x7f02004d;
+        public static int volby_passive=0x7f02004e;
     }
     public static final class id {
-        public static int action_settings=0x7f05002e;
+        public static int action_settings=0x7f050045;
         public static int blue_line=0x7f05000b;
         public static int button1=0x7f050006;
         public static int button2=0x7f050007;
         public static int button3=0x7f050008;
         public static int button4=0x7f050009;
         public static int button5=0x7f05000a;
+        public static int checking_tel=0x7f050014;
         public static int content=0x7f05000c;
         public static int controlPanel=0x7f050005;
-        public static int delete_photo=0x7f05002c;
-        public static int description=0x7f05002a;
-        public static int exit_button=0x7f050017;
+        public static int delete_photo=0x7f050043;
+        public static int description=0x7f050040;
+        public static int evidence_tel=0x7f050015;
+        public static int exit_button=0x7f050020;
+        public static int find_route=0x7f050041;
         public static int header=0x7f05000f;
         public static int hybrid=0x7f050004;
-        public static int icon=0x7f05002d;
-        public static int list_item_icon=0x7f050028;
-        public static int list_item_name=0x7f05001f;
-        public static int main_menu_list=0x7f050010;
-        public static int map=0x7f050011;
-        public static int mapTypeContainer=0x7f050012;
-        public static int member_detail_name=0x7f050014;
-        public static int member_mail=0x7f050021;
-        public static int member_name=0x7f050020;
-        public static int news_date=0x7f050024;
-        public static int news_detail_date=0x7f050019;
-        public static int news_detail_long_desc=0x7f050016;
-        public static int news_detail_title=0x7f050015;
-        public static int news_header=0x7f050022;
-        public static int news_list=0x7f050018;
-        public static int news_short_desc=0x7f050026;
-        public static int news_title=0x7f050025;
+        public static int icon=0x7f050044;
+        public static int list_item_icon=0x7f05003e;
+        public static int list_item_name=0x7f050035;
+        public static int lumino_web=0x7f05002b;
+        public static int main_menu_list=0x7f050017;
+        public static int map=0x7f050018;
+        public static int mapTypeContainer=0x7f050019;
+        public static int matrika_tel=0x7f050013;
+        public static int mayor_desc=0x7f05001f;
+        public static int mayor_mail=0x7f05001e;
+        public static int mayor_name=0x7f05001c;
+        public static int mayor_tel=0x7f05001d;
+        public static int mayors_office_fax=0x7f050011;
+        public static int mayors_office_mail=0x7f050012;
+        public static int mayors_office_tel=0x7f050010;
+        public static int member_age=0x7f050024;
+        public static int member_coalition=0x7f050028;
+        public static int member_detail_mail=0x7f050023;
+        public static int member_detail_name=0x7f050022;
+        public static int member_function=0x7f050029;
+        public static int member_job=0x7f050025;
+        public static int member_mail=0x7f050037;
+        public static int member_name=0x7f050036;
+        public static int member_party=0x7f05002a;
+        public static int member_photo=0x7f050021;
+        public static int member_time_interval=0x7f050027;
+        public static int member_vote_location=0x7f050026;
+        public static int meyor_photo=0x7f05001b;
+        public static int news_date=0x7f05003a;
+        public static int news_detail_date=0x7f05002d;
+        public static int news_detail_long_desc=0x7f05002f;
+        public static int news_detail_title=0x7f05002e;
+        public static int news_header=0x7f050038;
+        public static int news_list=0x7f05002c;
+        public static int news_short_desc=0x7f05003c;
+        public static int news_title=0x7f05003b;
         public static int none=0x7f050000;
         public static int normal=0x7f050001;
-        public static int office_menu_list=0x7f05001a;
-        public static int photo=0x7f05002b;
-        public static int photos_container=0x7f05001c;
+        public static int office_menu_list=0x7f050030;
+        public static int photo=0x7f050042;
+        public static int photos_container=0x7f050032;
         public static int progressBar=0x7f05000e;
-        public static int read_more=0x7f050027;
-        public static int report_address=0x7f05001b;
-        public static int report_desc=0x7f05001d;
+        public static int read_more=0x7f05003d;
+        public static int report_address=0x7f050031;
+        public static int report_desc=0x7f050033;
         public static int satellite=0x7f050002;
-        public static int selected_category=0x7f050013;
-        public static int send_report=0x7f05001e;
+        public static int selected_category=0x7f05001a;
+        public static int send_report=0x7f050034;
+        public static int social_tel=0x7f050016;
         public static int splash_img=0x7f05000d;
         public static int terrain=0x7f050003;
-        public static int thumbnail_img=0x7f050023;
-        public static int title=0x7f050029;
+        public static int thumbnail_img=0x7f050039;
+        public static int title=0x7f05003f;
     }
     public static final class integer {
         public static int number_of_report_photos=0x7f080000;
@@ -360,35 +423,39 @@ containing a value of this type.
     public static final class layout {
         public static int activity_main=0x7f030000;
         public static int activity_splash=0x7f030001;
-        public static int fragment_main=0x7f030002;
-        public static int fragment_main_menu=0x7f030003;
-        public static int fragment_map=0x7f030004;
-        public static int fragment_member_detail=0x7f030005;
-        public static int fragment_more=0x7f030006;
-        public static int fragment_news=0x7f030007;
-        public static int fragment_news_detail=0x7f030008;
-        public static int fragment_office=0x7f030009;
-        public static int fragment_report=0x7f03000a;
-        public static int list_item_main_menu=0x7f03000b;
-        public static int list_item_members=0x7f03000c;
-        public static int list_item_news=0x7f03000d;
-        public static int list_item_office=0x7f03000e;
-        public static int place_detail_layout=0x7f03000f;
-        public static int report_photo=0x7f030010;
-        public static int v_tab=0x7f030011;
+        public static int fragment_contacts=0x7f030002;
+        public static int fragment_main=0x7f030003;
+        public static int fragment_main_menu=0x7f030004;
+        public static int fragment_map=0x7f030005;
+        public static int fragment_mayor_detail=0x7f030006;
+        public static int fragment_member_detail=0x7f030007;
+        public static int fragment_more=0x7f030008;
+        public static int fragment_news=0x7f030009;
+        public static int fragment_news_detail=0x7f03000a;
+        public static int fragment_office=0x7f03000b;
+        public static int fragment_report=0x7f03000c;
+        public static int list_item_main_menu=0x7f03000d;
+        public static int list_item_members=0x7f03000e;
+        public static int list_item_news=0x7f03000f;
+        public static int list_item_office=0x7f030010;
+        public static int place_detail_layout=0x7f030011;
+        public static int report_photo=0x7f030012;
+        public static int v_tab=0x7f030013;
     }
     public static final class menu {
         public static int main=0x7f0c0000;
     }
     public static final class string {
-        public static int action_settings=0x7f06001c;
-        public static int address_not_found=0x7f060031;
-        public static int app_name=0x7f06001a;
+        public static int action_settings=0x7f06002a;
+        public static int address_line1=0x7f06001a;
+        public static int address_line2=0x7f06001b;
+        public static int address_not_found=0x7f06003f;
+        public static int app_name=0x7f060028;
         /**      MORE 	
          */
-        public static int appl=0x7f060034;
-        public static int assholes=0x7f060029;
-        public static int atrium=0x7f060025;
+        public static int appl=0x7f060042;
+        public static int assholes=0x7f060037;
+        public static int atrium=0x7f060033;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -412,6 +479,7 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static int auth_client_using_bad_version_title=0x7f06000f;
+        public static int checking_tel=0x7f060020;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -467,45 +535,85 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static int common_signin_button_text_long=0x7f06000e;
-        public static int contacts=0x7f060023;
-        public static int copyright=0x7f060039;
-        public static int desc=0x7f06002d;
-        public static int elections=0x7f06002a;
-        public static int free_time=0x7f060020;
-        public static int grafik=0x7f060038;
-        public static int hello_world=0x7f06001b;
-        public static int lumino_desc=0x7f060036;
+        public static int contacts=0x7f060031;
+        public static int contacts_checking=0x7f060056;
+        public static int contacts_evidence=0x7f060057;
+        public static int contacts_fax=0x7f060053;
+        public static int contacts_friday=0x7f06005e;
+        public static int contacts_hours=0x7f060059;
+        public static int contacts_mail=0x7f060054;
+        /**      CONTACTS 	
+         */
+        public static int contacts_main_caption=0x7f060050;
+        public static int contacts_matrika=0x7f060055;
+        public static int contacts_mayors_office=0x7f060051;
+        public static int contacts_monday=0x7f06005a;
+        public static int contacts_social=0x7f060058;
+        public static int contacts_tel=0x7f060052;
+        public static int contacts_thursday=0x7f06005d;
+        public static int contacts_tuesday=0x7f06005b;
+        public static int contacts_wednesday=0x7f06005c;
+        public static int copyright=0x7f060047;
+        public static int desc=0x7f06003b;
+        public static int elections=0x7f060038;
+        public static int evidence_tel=0x7f060021;
+        public static int free_time=0x7f06002e;
+        public static int grafik=0x7f060046;
+        public static int hello_world=0x7f060029;
+        public static int lumino_desc=0x7f060044;
         public static int mail_for_reporting=0x7f060019;
-        public static int matrika=0x7f060024;
-        public static int mayor=0x7f060028;
+        public static int matrika=0x7f060032;
+        public static int matrika_tel=0x7f06001f;
+        public static int mayor=0x7f060036;
+        /**      MAYOR DETAIL 	
+         */
+        public static int mayor_title=0x7f06004f;
+        public static int mayors_office_fax=0x7f06001d;
+        public static int mayors_office_mail=0x7f06001e;
+        public static int mayors_office_tel=0x7f06001c;
+        /**      MEMBER DETAIL 	
+         */
+        public static int member_age=0x7f060048;
+        public static int member_coalition=0x7f06004c;
+        public static int member_function=0x7f06004d;
+        public static int member_job=0x7f060049;
+        public static int member_party=0x7f06004e;
+        public static int member_time_interval=0x7f06004b;
+        public static int member_vote_location=0x7f06004a;
         /**   MENU STRINGS    
          */
-        public static int news=0x7f06001d;
-        public static int of_report=0x7f06002e;
-        public static int office_board=0x7f060026;
-        public static int office_main_data=0x7f060027;
+        public static int news=0x7f06002b;
+        public static int of_report=0x7f06003c;
+        public static int office_board=0x7f060034;
+        public static int office_main_data=0x7f060035;
+        public static int openning_fr=0x7f060027;
+        public static int openning_mo=0x7f060023;
+        public static int openning_th=0x7f060026;
+        public static int openning_tu=0x7f060024;
+        public static int openning_we=0x7f060025;
         /**      REPORT 	
          */
-        public static int photo=0x7f06002c;
-        public static int places=0x7f06001f;
+        public static int photo=0x7f06003a;
+        public static int places=0x7f06002d;
         /**     places categories	 
          */
         public static int places_category1=0x7f060015;
         public static int places_category2=0x7f060016;
         public static int places_category3=0x7f060017;
         public static int places_category4=0x7f060018;
-        public static int please_wait=0x7f06002f;
-        public static int problem_report=0x7f060032;
-        public static int programator=0x7f060037;
+        public static int please_wait=0x7f06003d;
+        public static int problem_report=0x7f060040;
+        public static int programator=0x7f060045;
         /**      NEWS	 
          */
-        public static int read_more=0x7f06002b;
-        public static int report=0x7f060021;
-        public static int send=0x7f060030;
-        public static int send_mail_by=0x7f060033;
-        public static int traffic=0x7f060022;
-        public static int traffic_parking=0x7f06001e;
-        public static int web=0x7f060035;
+        public static int read_more=0x7f060039;
+        public static int report=0x7f06002f;
+        public static int send=0x7f06003e;
+        public static int send_mail_by=0x7f060041;
+        public static int social_tel=0x7f060022;
+        public static int traffic=0x7f060030;
+        public static int traffic_parking=0x7f06002c;
+        public static int web=0x7f060043;
     }
     public static final class style {
         /** 

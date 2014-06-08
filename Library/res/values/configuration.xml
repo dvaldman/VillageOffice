@@ -41,5 +41,20 @@
         <item>@drawable/poslanci_passive</item>
     </array>
    
+    <string name="address_line1">Tr. SNP 39</string>
+    <string name="address_line2">040 11 Košice</string>
+    <string name="mayors_office_tel"><u>055 / 788 32 00</u></string>
+    <string name="mayors_office_fax"><u>055 / 788 32 09</u></string>
+    <string name="mayors_office_mail"><u>miestnyurad@kosicezapad.sk</u></string>
+    
+   <string name="matrika_tel"><u>055 / 788 32 81</u></string>
+   <string name="checking_tel"><u>055 / 788 32 80</u></string>
+   <string name="evidence_tel"><u>055 / 788 32 82</u></string>
+   <string name="social_tel"><u>055 / 788 32 80</u></string>
    
+   <string name="openning_mo">8:00 &#8211; 15:30 hod</string>
+   <string name="openning_tu">8:00 &#8211; 15:30 hod</string>
+   <string name="openning_we">8:00 &#8211; 15:30 hod</string>
+   <string name="openning_th">8:00 &#8211; 15:30 hod</string>
+   <string name="openning_fr">8:00 &#8211; 15:30 hod</string>
 </resources>

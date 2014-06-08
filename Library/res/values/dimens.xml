@@ -27,8 +27,11 @@
     <dimen name="main_menu_item_height">50dp</dimen>
     
     <!-- Map fragment -->
-    <dimen name="map_marker_offset_x">150dp</dimen>
+    <dimen name="map_marker_offset_x">50dp</dimen>
     <dimen name="map_marker_offset_y">40dp</dimen>
+    <dimen name="marker_padding_sides">9dp</dimen>
+    <dimen name="marker_padding_top_bottom">5dp</dimen>
+    <dimen name="marker_width">250dp</dimen>
     
     <!-- News ListItem -->
     <dimen name="news_thumbnail_size">75dp</dimen>
@@ -53,6 +56,35 @@
     <dimen name="report_photos_size">150dp</dimen>
     
     <!-- member detail -->
+    <dimen name="member_detail_margin_sides">50dp</dimen>
     <dimen name="member_detail_marginTop">10dp</dimen>
+    <dimen name="member_photo_w">113dp</dimen>
+    <dimen name="member_photo_h">130dp</dimen>
+    <dimen name="member_detail_exit_right">30dp</dimen>
+    <dimen name="member_detail_text_margin_top">10dp</dimen>
+    <dimen name="member_detail_value_margin_top">1dp</dimen>
+    <dimen name="member_detail_caption_text_size">15sp</dimen>
+    <dimen name="member_detail_value_text_size">15sp</dimen>
+    
+    <!-- mayor detail -->
+    <dimen name="mayor_title_text_size">17sp</dimen>
+    <dimen name="mayor_name_text">16sp</dimen>
+    <dimen name="mayor_contact_text_margin_top">5dp</dimen>
+    <dimen name="mayor_contact_text_size">14dp</dimen>
+    
+    <!-- contacts -->
+    <dimen name="contacts_margin_top">30dp</dimen>
+    <dimen name="contacts_main_caption">19sp</dimen>
+    <dimen name="contacts_main_subcaptions">17sp</dimen>
+    <dimen name="contacts_caption">5dp</dimen>
+    <dimen name="contacts_text">14dp</dimen>
+    <dimen name="contacts_mayors_office_first_column">90dp</dimen>
+    <dimen name="contacts_hours_first_column">90dp</dimen>
+    <dimen name="contacts_caption_margin">10dp</dimen>
+    <dimen name="contacts_section_offset">20dp</dimen>
+    
+    
+    
+    
     
 </resources>

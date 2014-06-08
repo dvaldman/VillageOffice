@@ -33,7 +33,8 @@ public class MayorParser {
 	public boolean parseResponse(){
 		boolean result = false;
 		try{
-			database.createTable(Tables.Mayor.CREATE_TABLE);
+			if(!database.createTable(Tables.Mayor.CREATE_TABLE))
+				database.clearTable(Tables.Mayor.TABLE_NAME);
 			
 			JSONObject json = new JSONObject(this.response);
 

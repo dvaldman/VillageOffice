@@ -6,10 +6,13 @@ public class Constants {
 	public static final String PLACEHOLDER_STRING = "{%s}";
 	
 	/****************************** Handler keys ******************************/
-	public static final int MESSAGE_SELECT_MAP 		= 0;
-	public static final int MESSAGE_SELECT_CONTACTS = 1;
-	public static final int MESSAGE_DESELECT		= 2;
-	public static final int MESSAGE_GET_ADDRESS		= 3;
+	public static final int MESSAGE_SELECT_MAIN		= 0;
+	public static final int MESSAGE_SELECT_MAP 		= 1;
+	public static final int MESSAGE_SELECT_OFFICE 	= 2;
+	public static final int MESSAGE_SELECT_CONTACTS = 3;
+	public static final int MESSAGE_SELECT_MORE 	= 4;
+	public static final int MESSAGE_DESELECT		= 5;
+	public static final int MESSAGE_GET_ADDRESS		= 6;
 	
 	/****************************** Json keywords ******************************/
 	public static final String	KEYWORD_ID 				= "id";

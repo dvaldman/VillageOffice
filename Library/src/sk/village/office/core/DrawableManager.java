@@ -58,7 +58,8 @@ public class DrawableManager {
     public void fetchScaledDrawableOnThread(final String urlString, final ImageView imageView, final OnDownloadFinishedListener listener) {
         if (drawableMap.containsKey(urlString)) {
             imageView.setImageDrawable(drawableMap.get(urlString));
-            imageView.setImageBitmap(Bitmap.createScaledBitmap(((BitmapDrawable)drawableMap.get(urlString)).getBitmap(), 1500, 1500, false));
+            
+//            imageView.setImageBitmap(Bitmap.createScaledBitmap(((BitmapDrawable)drawableMap.get(urlString)).getBitmap(), 150, 150, false));
             
             return;
         }

@@ -38,8 +38,10 @@ public class PlacesParser {
 		try{
 			JSONObject json = new JSONObject(this.response);
 			
-			database.createTable(Tables.Places.CREATE_TABLE);
-			database.createTable(Tables.Categories.CREATE_TABLE);
+			if(!database.createTable(Tables.Places.CREATE_TABLE))
+				database.clearTable(Tables.Places.TABLE_NAME);
+			if(!database.createTable(Tables.Categories.CREATE_TABLE))
+				database.clearTable(Tables.Categories.TABLE_NAME);
 			
 			parsePlaces(json.getJSONArray(Constants.KEYWORD_PLACES));
 			insertCategories();

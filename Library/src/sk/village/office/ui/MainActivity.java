@@ -65,11 +65,20 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 			@Override
 			public void handleMessage(Message msg) {
 				switch(msg.what){
+				case Constants.MESSAGE_SELECT_MAIN:
+					button1.performClick();
+					break;
 				case Constants.MESSAGE_SELECT_MAP:
 					button2.performClick();
 					break;
+				case Constants.MESSAGE_SELECT_OFFICE:
+					button3.performClick();
+					break;
 				case Constants.MESSAGE_SELECT_CONTACTS:
 					button4.performClick();
+					break;
+				case Constants.MESSAGE_SELECT_MORE:
+					button5.performClick();
 					break;
 				case Constants.MESSAGE_DESELECT:
 					setDefaultButtonBackground();

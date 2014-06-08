@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class AddressProvider{
 	
-	public static final int STREET_CITY_COUNTRY = 0;
+	public static final int STREET_CITY = 0;
 	
 	private static Context context;
 	private static LatLng position;
@@ -70,8 +70,8 @@ public class AddressProvider{
 				addresses = geo.getFromLocation(position.latitude,position.longitude, 1);
 				if (addresses.size() > 0)
 					switch (resultFormatID) {
-					case STREET_CITY_COUNTRY:
-						result =  addresses.get(0).getAddressLine(0) + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getCountryName();
+					case STREET_CITY:
+						result =  addresses.get(0).getAddressLine(0) + ", " + addresses.get(0).getLocality();
 					}
 			} catch (IOException e) {
 				e.printStackTrace();
