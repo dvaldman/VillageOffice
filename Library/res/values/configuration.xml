@@ -19,14 +19,14 @@
     
 <!--    report	 -->   
    <bool name="report_to_mail">true</bool>
-   <string name="mail_for_reporting">valdman@zipper.sk</string>
+   <string name="mail_for_reporting">miestnyurad@kosicezapad.sk</string>
    <integer name="number_of_report_photos">1</integer>
    
    
     <array name="main_menu">
         <item>@string/news</item>
+        <item>@string/office_board</item>
         <item>@string/atrium</item>
-         <item>@string/office_board</item>
         <item>@string/report</item>
     </array>
     
@@ -57,4 +57,21 @@
    <string name="openning_we">8:00 &#8211; 15:30 hod</string>
    <string name="openning_th">8:00 &#8211; 15:30 hod</string>
    <string name="openning_fr">8:00 &#8211; 15:30 hod</string>
+   
+   
+   <!--     MORE 	-->
+<string name="tutorial"><b>Mobilná aplikácia Košice Západ</b>\n slúži obyvateľom mestskej časti i ostatným občanom ako ďalší nástroj komunikácie s MČ. V aplikácii jej používatelia nájdu:
+\n\nNovinky z MČ\nÚradnú tabuľu\nNovinky a program ÁTRIA\nInformácie o predstaviteľoch MČ \nKontakty\nMapu s polohou Úradu, Zdravotníckych zariadení vrátane lekární a Polície\n
+Možnosť informovať MČ o nečistotách na verejných priestranstvách (modul Čistota)\n\n\n
+<b>Modul Čistota</b>\n
+- zapnite si Lokalizačné služby prípadne ak ich máte vypnuté, doplnte adresu\n
+- pridajte fotografiu\n
+- dopíšte popis problému, na ktorý upozorňujete\n\n\n
+</string>
+	<string name="appl">Aplikácia MČ Košice - Západ vyvinutá Luminosity Digital</string>
+	<string name="web">www.luminosity.sk</string>
+	<string name="lumino_desc">Webové a mobilné riešenia na mieru</string>
+    <string name="programator">Programovanie: Denis Valdman</string>
+    <string name="grafik">Grafika: Martin Koniar</string>
+    <string name="copyright">Copyright \u00A9  2014 Košice Západ</string>
 </resources>

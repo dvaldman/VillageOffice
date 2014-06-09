@@ -5,6 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     
+    <string name="ok">OK</string>
+    
 <!--  MENU STRINGS    -->
     <string name="news">NOVINKY</string>
     <string name="traffic_parking">DOPRAVA/PARKOVANIE</string>
@@ -16,7 +18,7 @@
     <string name="matrika">MATRIKA</string>
     <string name="atrium">ÁTRIUM</string>
   
-    <string name="office_board">URADNÁ TABUĽA</string>
+    <string name="office_board">ÚRADNÁ TABUĽA</string>
     <string name="office_main_data">ZÁKL. ÚDAJE O ÚRADE</string>
     <string name="mayor">STAROSTA</string>
     <string name="assholes">POSLANCI</string>
@@ -33,16 +35,13 @@
     <string name="please_wait">Čakajte prosím</string>
     <string name="send">Odoslať</string>
     <string name="address_not_found">Adresa sa nenašla</string>
-    <string name="problem_report">Hlásenie o probléme</string>
+    <string name="problem_report">Hlásenie o čistote z mobilnej aplikácie</string>
     <string name="send_mail_by">Poslať mail</string>
+    <string name="error">Chyba</string>
+    <string name="description:missing">Vyplňte popis</string>
     
-<!--     MORE 	-->
-	<string name="appl">Aplikácia MČ Košice - Západ vyvinutá Luminosity Digital</string>
-	<string name="web">www.luminosity.sk</string>
-	<string name="lumino_desc">Webové a mobilné riešenia na mieru</string>
-    <string name="programator">Programovanie: Denis Valdman</string>
-    <string name="grafik">Grafika: Martin Koniar</string>
-    <string name="copyright">Copyright \u00A9  2014 Košice Západ</string>
+    <string name="not_online">Uistite sa, že máte prístup na internet</string>
+    
     
 <!--     MEMBER DETAIL 	-->
 	<string name="member_age">Vek:</string>

@@ -452,16 +452,14 @@ containing a value of this type.
         public static final int main=0x7f0c0000;
     }
     public static final class string {
-        public static final int action_settings=0x7f06002a;
+        public static final int action_settings=0x7f060031;
         public static final int address_line1=0x7f06001a;
         public static final int address_line2=0x7f06001b;
-        public static final int address_not_found=0x7f06003f;
-        public static final int app_name=0x7f060028;
-        /**      MORE 	
-         */
-        public static final int appl=0x7f060042;
-        public static final int assholes=0x7f060037;
-        public static final int atrium=0x7f060033;
+        public static final int address_not_found=0x7f060047;
+        public static final int app_name=0x7f06002f;
+        public static final int appl=0x7f060029;
+        public static final int assholes=0x7f06003f;
+        public static final int atrium=0x7f06003b;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -541,57 +539,61 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
-        public static final int contacts=0x7f060031;
-        public static final int contacts_checking=0x7f060056;
-        public static final int contacts_evidence=0x7f060057;
-        public static final int contacts_fax=0x7f060053;
-        public static final int contacts_friday=0x7f06005e;
-        public static final int contacts_hours=0x7f060059;
-        public static final int contacts_mail=0x7f060054;
+        public static final int contacts=0x7f060039;
+        public static final int contacts_checking=0x7f06005b;
+        public static final int contacts_evidence=0x7f06005c;
+        public static final int contacts_fax=0x7f060058;
+        public static final int contacts_friday=0x7f060063;
+        public static final int contacts_hours=0x7f06005e;
+        public static final int contacts_mail=0x7f060059;
         /**      CONTACTS 	
          */
-        public static final int contacts_main_caption=0x7f060050;
-        public static final int contacts_matrika=0x7f060055;
-        public static final int contacts_mayors_office=0x7f060051;
-        public static final int contacts_monday=0x7f06005a;
-        public static final int contacts_social=0x7f060058;
-        public static final int contacts_tel=0x7f060052;
-        public static final int contacts_thursday=0x7f06005d;
-        public static final int contacts_tuesday=0x7f06005b;
-        public static final int contacts_wednesday=0x7f06005c;
-        public static final int copyright=0x7f060047;
-        public static final int desc=0x7f06003b;
-        public static final int elections=0x7f060038;
+        public static final int contacts_main_caption=0x7f060055;
+        public static final int contacts_matrika=0x7f06005a;
+        public static final int contacts_mayors_office=0x7f060056;
+        public static final int contacts_monday=0x7f06005f;
+        public static final int contacts_social=0x7f06005d;
+        public static final int contacts_tel=0x7f060057;
+        public static final int contacts_thursday=0x7f060062;
+        public static final int contacts_tuesday=0x7f060060;
+        public static final int contacts_wednesday=0x7f060061;
+        public static final int copyright=0x7f06002e;
+        public static final int desc=0x7f060043;
+        public static final int description_missing=0x7f06004b;
+        public static final int elections=0x7f060040;
+        public static final int error=0x7f06004a;
         public static final int evidence_tel=0x7f060021;
-        public static final int free_time=0x7f06002e;
-        public static final int grafik=0x7f060046;
-        public static final int hello_world=0x7f060029;
-        public static final int lumino_desc=0x7f060044;
+        public static final int free_time=0x7f060036;
+        public static final int grafik=0x7f06002d;
+        public static final int hello_world=0x7f060030;
+        public static final int lumino_desc=0x7f06002b;
         public static final int mail_for_reporting=0x7f060019;
-        public static final int matrika=0x7f060032;
+        public static final int matrika=0x7f06003a;
         public static final int matrika_tel=0x7f06001f;
-        public static final int mayor=0x7f060036;
+        public static final int mayor=0x7f06003e;
         /**      MAYOR DETAIL 	
          */
-        public static final int mayor_title=0x7f06004f;
+        public static final int mayor_title=0x7f060054;
         public static final int mayors_office_fax=0x7f06001d;
         public static final int mayors_office_mail=0x7f06001e;
         public static final int mayors_office_tel=0x7f06001c;
         /**      MEMBER DETAIL 	
          */
-        public static final int member_age=0x7f060048;
-        public static final int member_coalition=0x7f06004c;
-        public static final int member_function=0x7f06004d;
-        public static final int member_job=0x7f060049;
-        public static final int member_party=0x7f06004e;
-        public static final int member_time_interval=0x7f06004b;
-        public static final int member_vote_location=0x7f06004a;
+        public static final int member_age=0x7f06004d;
+        public static final int member_coalition=0x7f060051;
+        public static final int member_function=0x7f060052;
+        public static final int member_job=0x7f06004e;
+        public static final int member_party=0x7f060053;
+        public static final int member_time_interval=0x7f060050;
+        public static final int member_vote_location=0x7f06004f;
         /**   MENU STRINGS    
          */
-        public static final int news=0x7f06002b;
-        public static final int of_report=0x7f06003c;
-        public static final int office_board=0x7f060034;
-        public static final int office_main_data=0x7f060035;
+        public static final int news=0x7f060033;
+        public static final int not_online=0x7f06004c;
+        public static final int of_report=0x7f060044;
+        public static final int office_board=0x7f06003c;
+        public static final int office_main_data=0x7f06003d;
+        public static final int ok=0x7f060032;
         public static final int openning_fr=0x7f060027;
         public static final int openning_mo=0x7f060023;
         public static final int openning_th=0x7f060026;
@@ -599,27 +601,30 @@ containing a value of this type.
         public static final int openning_we=0x7f060025;
         /**      REPORT 	
          */
-        public static final int photo=0x7f06003a;
-        public static final int places=0x7f06002d;
+        public static final int photo=0x7f060042;
+        public static final int places=0x7f060035;
         /**     places categories	 
          */
         public static final int places_category1=0x7f060015;
         public static final int places_category2=0x7f060016;
         public static final int places_category3=0x7f060017;
         public static final int places_category4=0x7f060018;
-        public static final int please_wait=0x7f06003d;
-        public static final int problem_report=0x7f060040;
-        public static final int programator=0x7f060045;
+        public static final int please_wait=0x7f060045;
+        public static final int problem_report=0x7f060048;
+        public static final int programator=0x7f06002c;
         /**      NEWS	 
          */
-        public static final int read_more=0x7f060039;
-        public static final int report=0x7f06002f;
-        public static final int send=0x7f06003e;
-        public static final int send_mail_by=0x7f060041;
+        public static final int read_more=0x7f060041;
+        public static final int report=0x7f060037;
+        public static final int send=0x7f060046;
+        public static final int send_mail_by=0x7f060049;
         public static final int social_tel=0x7f060022;
-        public static final int traffic=0x7f060030;
-        public static final int traffic_parking=0x7f06002c;
-        public static final int web=0x7f060043;
+        public static final int traffic=0x7f060038;
+        public static final int traffic_parking=0x7f060034;
+        /**      MORE 	
+         */
+        public static final int tutorial=0x7f060028;
+        public static final int web=0x7f06002a;
     }
     public static final class style {
         /** 

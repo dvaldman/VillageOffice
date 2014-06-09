@@ -17,7 +17,9 @@ import sk.village.office.util.ReportMailBuilder;
 import sk.village.office.util.Util;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -200,8 +202,12 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		
-		if(Configuration.reportToMail)
-			reportToMail();
+		if(Configuration.reportToMail){
+			if(et.getText().toString().equals(""))
+				showErrorDialog();
+			else
+				reportToMail();
+		}
 		
 	}
 	
@@ -227,5 +233,17 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		} catch (android.content.ActivityNotFoundException ex) {
 		    Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
 		}
+	}
+	
+	protected void showErrorDialog(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.error);
+        alertDialog.setMessage(R.string.description_missing);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int which) {
+            	dialog.dismiss();
+            }
+        });
+        alertDialog.show();
 	}
 }

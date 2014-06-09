@@ -22,9 +22,11 @@ import sk.village.office.model.ContentHolder;
 import sk.village.office.model.Place;
 import sk.village.office.parsers.DirectionsJSONParser;
 import sk.village.office.util.AddressProvider;
+import sk.village.office.util.ConnectionChecker;
 import sk.village.office.util.Log;
 import sk.village.office.util.Util;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.location.Address;
@@ -224,7 +226,8 @@ public class PlacesFragment extends Fragment implements OnClickListener{
     	
 		@Override
 		public View getInfoWindow(final Marker marker) {
-	        if (infoWindowView != null) {
+	      try{  
+			if (infoWindowView != null) {
 	            ViewGroup parent = (ViewGroup) infoWindowView.getParent();
 	            if (parent != null)
 	                parent.removeView(infoWindowView);
@@ -243,7 +246,8 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 				TVaddress.setText(lastAddress);
 			title.setText(item.getName());
 			
-			
+	      }catch(Exception e){}
+	      
 			return infoWindowView;
 		}
 		
@@ -286,10 +290,13 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 		   map.clear();
 		   setSelectedMarkers(false);
 		   
-
-		   String url = Util.getDirectionsUrl(fromPosition, toPosition);
-		   DownloadTask downloadTask = new DownloadTask();
-		   downloadTask.execute(url);
+		   if(ConnectionChecker.isOnline(getActivity())){
+			   String url = Util.getDirectionsUrl(fromPosition, toPosition);
+			   DownloadTask downloadTask = new DownloadTask();
+			   downloadTask.execute(url);
+		   }
+		   else
+			   showErrorDialog();
 		   
 		  }
 		  
@@ -389,40 +396,54 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 		protected void onPostExecute(List<List<HashMap<String, String>>> result) {
 			ArrayList<LatLng> points = null;
 			PolylineOptions lineOptions = null;
-			MarkerOptions markerOptions = new MarkerOptions();
 			
 			
 			// Traversing through all the routes
-			for(int i=0;i<result.size();i++){
-				points = new ArrayList<LatLng>();
-				lineOptions = new PolylineOptions();
-				
-				// Fetching i-th route
-				List<HashMap<String, String>> path = result.get(i);
-				
-				// Fetching all the points in i-th route
-				for(int j=0;j<path.size();j++){
-					HashMap<String,String> point = path.get(j);					
+			if(result == null)
+				showErrorDialog();
+			else
+				for(int i=0;i<result.size();i++){
+					points = new ArrayList<LatLng>();
+					lineOptions = new PolylineOptions();
 					
-					double lat = Double.parseDouble(point.get("lat"));
-					double lng = Double.parseDouble(point.get("lng"));
-					LatLng position = new LatLng(lat, lng);	
+					// Fetching i-th route
+					List<HashMap<String, String>> path = result.get(i);
 					
-					points.add(position);						
+					// Fetching all the points in i-th route
+					for(int j=0;j<path.size();j++){
+						HashMap<String,String> point = path.get(j);					
+						
+						double lat = Double.parseDouble(point.get("lat"));
+						double lng = Double.parseDouble(point.get("lng"));
+						LatLng position = new LatLng(lat, lng);	
+						
+						points.add(position);						
+					}
+					
+					// Adding all the points in the route to LineOptions
+					lineOptions.addAll(points);
+					lineOptions.width(5);
+					lineOptions.color(Color.RED);	
+					
 				}
 				
-				// Adding all the points in the route to LineOptions
-				lineOptions.addAll(points);
-				lineOptions.width(5);
-				lineOptions.color(Color.RED);	
-				
-			}
-			
-			// Drawing polyline in the Google Map for the i-th route
-			map.addPolyline(lineOptions);							
-		}			
+				// Drawing polyline in the Google Map for the i-th route
+				map.addPolyline(lineOptions);							
+			}			
     }   
 
+    protected void showErrorDialog(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.error);
+        alertDialog.setMessage(R.string.not_online);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int which) {
+            	dialog.dismiss();
+            }
+        });
+        alertDialog.show();
+	}
+    
     private String downloadUrl(String strUrl) throws IOException{
         String data = "";
         InputStream iStream = null;
