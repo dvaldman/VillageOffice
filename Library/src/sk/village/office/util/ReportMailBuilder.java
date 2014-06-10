@@ -23,6 +23,7 @@ public class ReportMailBuilder {
 		return this;
 	}
 	
+	
 	public ReportMailBuilder setMailText(String text){
 		mail = mail.replace(PLACEHOLDER_TXT, text);
 		return this;

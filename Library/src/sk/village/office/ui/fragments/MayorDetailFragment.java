@@ -47,7 +47,7 @@ public class MayorDetailFragment extends Fragment implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		if(v.getId() == R.id.exit_button){
-			Fragment fragment = new ArticlesListFragment();
+			Fragment fragment = new OfficeFragment();
 			getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).addToBackStack("tag").commit();
 		}
 		

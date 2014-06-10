@@ -31,6 +31,7 @@
 <!--     REPORT 	-->
     <string name="photo">Fotografia </string>
     <string name="desc">Popis </string>
+    <string name="address">Adresa </string>
     <string name="of_report">hlásenia</string>
     <string name="please_wait">Čakajte prosím</string>
     <string name="send">Odoslať</string>
@@ -38,7 +39,8 @@
     <string name="problem_report">Hlásenie o čistote z mobilnej aplikácie</string>
     <string name="send_mail_by">Poslať mail</string>
     <string name="error">Chyba</string>
-    <string name="description:missing">Vyplňte popis</string>
+    <string name="description_missing">Vyplňte popis</string>
+    <string name="address_missing">Vyplňte adresu</string>
     
     <string name="not_online">Uistite sa, že máte prístup na internet</string>
     

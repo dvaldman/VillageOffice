@@ -16,6 +16,8 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddressProvider{
@@ -26,7 +28,7 @@ public class AddressProvider{
 	private static LatLng position;
 	private static int resultFormatID;
 	private static Callback callback; 
-	private static TextView textView; 
+	private static View[] views; 
 	 
 	
 	public static void getAddressForLatLong(Context cont, LatLng ll,int type,Callback call){
@@ -34,16 +36,16 @@ public class AddressProvider{
 		position = ll;
 		resultFormatID = type;
 		callback = call;
-		textView = null;
+		views = null;
 		new AddressTask().execute();
 	}
 	
-	public static void getAddressForLatLong(Context cont, LatLng ll,int type,TextView tv){
+	public static void getAddressForLatLong(Context cont, LatLng ll,int type,View[] tv){
 		context = cont;
 		position = ll;
 		resultFormatID = type;
 		callback = null;
-		textView = tv;
+		views = tv;
 		new AddressTask().execute();
 	}
 
@@ -51,9 +53,14 @@ public class AddressProvider{
 		
 		@Override
 		protected void onPreExecute() {
-			if(textView != null){
-				textView.setText("H¼ad‡m adresu");
-				textView.postInvalidate();
+			if(views != null){
+				for(View v:views){
+					if(v instanceof TextView)
+						((TextView)v).setText("H¼ad‡m adresu");
+					if(v instanceof EditText)
+						((EditText)v).setHint("H¼ad‡m adresu");
+					v.postInvalidate();
+				}
 			}
 		}
 		
@@ -81,10 +88,14 @@ public class AddressProvider{
 		
 		@Override
 		protected void onPostExecute(String result) {
-			if(textView != null){
-				Log.i("i am setting result "+result);
-				textView.setText(result);
-				textView.postInvalidate();
+			if(views != null){
+				for(View v:views){
+					if(v instanceof TextView)
+						((TextView)v).setText(result);
+					if(v instanceof EditText)
+						((EditText)v).setText(result);
+					v.postInvalidate();
+				}
 			}
 			if(callback != null){
 				Message msg = new Message();

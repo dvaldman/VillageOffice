@@ -52,7 +52,8 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	private static final int SELECT_PICTURE_CAMERA = 0;
 	private LayoutInflater inflater;
 	private static ArrayList<Bitmap> photos;
-	private EditText et;
+	private EditText reportEditText;
+	private EditText userAddresstEditText;
 	private TextView addressBar;
 	private static String report="";
 	
@@ -75,13 +76,13 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	    photosContainer = (LinearLayout) v.findViewById(R.id.photos_container);
 		v.findViewById(R.id.send_report).setOnClickListener(this);
 		addressBar = ((TextView)v.findViewById(R.id.report_address));
-		
+		userAddresstEditText = (EditText) v.findViewById(R.id.users_address);
 	    LatLng pos = new LatLng(GPSProvider.getInstance(getActivity()).getLatitude(), GPSProvider.getInstance(getActivity()).getLongitude());
 	    
-	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,addressBar);
+	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,new View[]{addressBar,userAddresstEditText});
 		
-	    et = (EditText) v.findViewById(R.id.report_desc);
-	    et.addTextChangedListener(new TextWatcher() {
+	    reportEditText = (EditText) v.findViewById(R.id.report_desc);
+	    reportEditText.addTextChangedListener(new TextWatcher() {
 			
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -94,7 +95,7 @@ public class ReportFragment extends Fragment implements OnClickListener{
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				report = et.getText().toString();
+				report = reportEditText.getText().toString();
 			}
 		});
 	    
@@ -152,7 +153,7 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		fillPhotoContainer();
 		
 		if(report != null && !report.equalsIgnoreCase(""))
-			 et.setText(report);
+			 reportEditText.setText(report);
 		    
 	}
 	
@@ -203,10 +204,13 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	public void onClick(View v) {
 		
 		if(Configuration.reportToMail){
-			if(et.getText().toString().equals(""))
-				showErrorDialog();
+			if(reportEditText.getText().toString().equals("") )
+				showErrorDialog(R.string.description_missing);
 			else
-				reportToMail();
+				if(userAddresstEditText.getText().toString().equals("") )
+					showErrorDialog(R.string.address_missing);
+				else
+					reportToMail();
 		}
 		
 	}
@@ -215,8 +219,8 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		Intent i = new Intent(Intent.ACTION_SEND_MULTIPLE);
 		
 		ReportMailBuilder mail = new ReportMailBuilder()
-								.setMailPosition(addressBar.getText().toString())
-								.setMailText(et.getText().toString());
+								.setMailPosition(userAddresstEditText.getText().toString())
+								.setMailText(reportEditText.getText().toString());
 		
 		i.setType("plain/text");
 		i.putExtra(Intent.EXTRA_EMAIL  , new String[]{Configuration.mailForReport});
@@ -235,10 +239,10 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		}
 	}
 	
-	protected void showErrorDialog(){
+	protected void showErrorDialog(int msgID){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
         alertDialog.setTitle(R.string.error);
-        alertDialog.setMessage(R.string.description_missing);
+        alertDialog.setMessage(msgID);
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int which) {
             	dialog.dismiss();

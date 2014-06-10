@@ -74,6 +74,53 @@
      	            android:layout_height="wrap_content"
      	            android:textSize="@dimen/report_title_text_size"
      	            android:textStyle="bold"
+     	            android:text="@string/address"
+     	        	android:layout_marginRight="5dp"
+     	        	/>   	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:text="@string/of_report"/>
+     	        
+     	    </LinearLayout>
+     	    
+     	    <EditText 
+     	        android:id="@+id/users_address"
+     	        android:layout_width="match_parent"
+     	        android:layout_height="wrap_content"
+    			android:singleLine="true"
+     	        android:lines="1"
+			    android:maxLines="1"
+			    android:scrollHorizontally="true"
+			    android:ellipsize="end"
+			    android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding"
+    	 		android:layout_marginBottom="@dimen/report_divider_margin_top_bottom"/>
+				     	    
+     	    
+     	    
+     	    <ImageView 
+     	        android:background="@color/app_white"
+     	        android:layout_width="fill_parent"
+     	        android:layout_height="@dimen/report_divider_height"
+     	        android:layout_marginTop="@dimen/report_divider_margin_top_bottom"
+     	        android:layout_marginBottom="@dimen/report_divider_margin_top_bottom"
+     	        />
+     	    
+     	    <LinearLayout 
+     	        android:orientation="horizontal"
+     	        android:layout_width="wrap_content"
+     	        android:layout_height="wrap_content"
+     	        android:layout_marginRight="@dimen/main_screen_padding"
+    	 		android:layout_marginLeft="@dimen/main_screen_padding"
+    	 		android:layout_marginBottom="@dimen/report_divider_margin_top_bottom">
+     	        
+     	        <TextView 
+     	            android:layout_width="wrap_content"
+     	            android:layout_height="wrap_content"
+     	            android:textSize="@dimen/report_title_text_size"
+     	            android:textStyle="bold"
      	            android:text="@string/photo"
      	        	android:layout_marginRight="5dp"
      	        	/>   	        
