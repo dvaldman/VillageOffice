@@ -47,6 +47,7 @@ public class Configuration {
 		staticData.add((context.getResources().getBoolean(R.bool.static_OfficeBoard)));
 		staticData.add((context.getResources().getBoolean(R.bool.static_atrium)));
 		staticData.add((context.getResources().getBoolean(R.bool.static_parliament)));
+		staticData.add((context.getResources().getBoolean(R.bool.static_atrium_program)));
 		
 //		places categories
 		placesCategory1 = context.getResources().getString(R.string.places_category1);
@@ -62,7 +63,6 @@ public class Configuration {
 		
 	}
 
-	
 	public boolean isStaticData(int type){
 		return staticData.get(type);
 	}

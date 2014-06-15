@@ -32,13 +32,15 @@ public class Tables
 		public static final String	LATITUDE		= TABLE_NAME + "_" + Constants.KEYWORD_LATITUDE;
 		public static final String	CATEGORY		= TABLE_NAME + "_" + Constants.KEYWORD_CATEGORY;
 		public static final String	DESCRIPTION		= TABLE_NAME + "_" + Constants.KEYWORD_DESCRIPTION;
+		public static final String	ADDRESS			= TABLE_NAME + "_" + Constants.KEYWORD_ADDRESS;
 		
 		public static final String	CREATE_TABLE	= "CREATE TABLE " + TABLE_NAME + " (" + ID + " INTEGER PRIMARY KEY, " + 
 																							NAME + " TEXT, "+
 																							LONGITUDE + " TEXT, "+
 																							LATITUDE + " TEXT, "+
 																							CATEGORY + " TEXT, "+
-																							DESCRIPTION + " TEXT "+
+																							DESCRIPTION + " TEXT, "+
+																							ADDRESS + " TEXT "+
 																						");";
 	}
 	
@@ -114,6 +116,28 @@ public class Tables
 																							LONG_DESC + " TEXT, " +
 																							SHORT_DESC + " TEXT, " +
 																							IMAGE + " TEXT " +
+																						");";
+	}
+	
+	public static class AtriumProgram
+	{
+		public static final String	TABLE_NAME		= "AtriumProgram";
+		
+		public static final String	ID				= TABLE_NAME + "_" + Constants.KEYWORD_ID;
+		public static final String	TITLE			= TABLE_NAME + "_" + Constants.KEYWORD_TITLE;
+		public static final String	DATE			= TABLE_NAME + "_" + Constants.KEYWORD_DATE;
+		public static final String	LONG_DESC		= TABLE_NAME + "_" + Constants.KEYWORD_LONG_DESC;
+		public static final String	SHORT_DESC		= TABLE_NAME + "_" + Constants.KEYWORD_SHORT_DESC;
+		public static final String	IMAGE			= TABLE_NAME + "_" + Constants.KEYWORD_IMAGE_THB;
+		public static final String	PDF				= TABLE_NAME + "_" + Constants.KEYWORD_PDF;
+		
+		public static final String	CREATE_TABLE	= "CREATE TABLE " + TABLE_NAME + " (" + ID + " INTEGER PRIMARY KEY, " + 
+																							TITLE + " TEXT, " +
+																							DATE + " TEXT, " +
+																							LONG_DESC + " TEXT, " +
+																							SHORT_DESC + " TEXT, " +
+																							IMAGE + " TEXT, " +
+																							PDF + " TEXT " +
 																						");";
 	}
 	

@@ -47,6 +47,8 @@ public class URLBuilder {
 			return Constants.URL_ATRIUM;
 		case Constants.GET_CONTENT_PARLIAMENT:
 			return Constants.URL_PARLIAMENT;
+		case Constants.GET_CONTENT_ATRIUM_PROGRAM:
+			return Constants.URL_ATRIUM_PROGRAM;
 		default:
 			return "";
 		}

@@ -78,6 +78,9 @@ public class SplashActivity extends BaseActivity{
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_PARLIAMENT))
 					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PARLIAMENT));
 				
+				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_ATRIUM_PROGRAM))
+					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM_PROGRAM));
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			} 

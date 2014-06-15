@@ -39,6 +39,7 @@ import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils.TruncateAt;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -237,14 +238,27 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 			TextView title = (TextView) infoWindowView.findViewById(R.id.title);
 			TVaddress = (TextView) infoWindowView.findViewById(R.id.description);
 			
-			if(lastAddress == null){
-				TVaddress.setText("H¼ad‡m adresu");
-				AddressCallback adrcall = new AddressCallback(marker);
-				AddressProvider.getAddressForLatLong(getActivity(), marker.getPosition(), AddressProvider.STREET_CITY,adrcall);
+			if(item.getAddress() == null || item.getAddress().equals("")){
+				if(lastAddress == null){
+					TVaddress.setText("H¼ad‡m adresu");
+					AddressCallback adrcall = new AddressCallback(marker);
+					AddressProvider.getAddressForLatLong(getActivity(), marker.getPosition(), AddressProvider.STREET_CITY,adrcall);
+				}
+				else
+					TVaddress.setText(lastAddress);
 			}
 			else
-				TVaddress.setText(lastAddress);
+				TVaddress.setText(item.getAddress());
 			title.setText(item.getName());
+			
+			
+			title.setEllipsize(TruncateAt.MARQUEE);
+			TVaddress.setEllipsize(TruncateAt.MARQUEE);
+			title.setSelected(true);
+			
+			title.setSingleLine();
+			title.setEllipsize(TruncateAt.MARQUEE);
+			title.setHorizontallyScrolling(true);
 			
 	      }catch(Exception e){}
 	      

@@ -20,6 +20,7 @@ public class Constants {
 	public static final String	KEYWORD_TEL_NUM			= "telNum";
 	public static final String	KEYWORD_MAIL			= "mail";
 	public static final String	KEYWORD_DESCRIPTION		= "description";
+	public static final String	KEYWORD_ADDRESS			= "address";
 	public static final String	KEYWORD_PLACES			= "places";
 	public static final String	KEYWORD_LATITUDE		= "latitude";
 	public static final String	KEYWORD_LONGITUDE		= "longitude";
@@ -32,9 +33,10 @@ public class Constants {
 	public static final String	KEYWORD_IMAGE_THB		= "image_thb";
 	public static final String	KEYWORD_AGE				= "age";
 	public static final String	KEYWORD_JOB				= "job";
-	public static final String	KEYWORD_VOTE_LOCATION		= "voteLocation";
+	public static final String	KEYWORD_VOTE_LOCATION	= "voteLocation";
 	public static final String	KEYWORD_TIME_INTERVAL	= "timeInterval";
 	public static final String	KEYWORD_EMAIL			= "email";
+	public static final String	KEYWORD_PDF				= "pdf";
 	public static final String	KEYWORD_COALITION		= "coalition";
 	public static final String	KEYWORD_FUNCTION		= "function";
 	public static final String	KEYWORD_POLIT_PARTY		= "politicalParty";
@@ -43,13 +45,14 @@ public class Constants {
 	public static final String URL_BASE_ONLINE 	= "http://rozpocetmesta.sk/aplikacia_KE/"+PLACEHOLDER_STRING+".php";
 	public static final String URL_BASE_OFFLINE = "json/"+PLACEHOLDER_STRING+".json";
 	
-	public static final String URL_MAYOR 		= "mayor";
-	public static final String URL_PLACES 		= "places";
-	public static final String URL_NEWS 		= "connect";
-	public static final String URL_CONTACTS 	= "contacts";
-	public static final String URL_OFFICE_BOARD	= "connect_uradnatabula";
-	public static final String URL_ATRIUM		= "connect_atrium";
-	public static final String URL_PARLIAMENT	= "connect_parliament";
+	public static final String URL_MAYOR 		  = "mayor";
+	public static final String URL_PLACES 		  = "places";
+	public static final String URL_NEWS 		  = "connect";
+	public static final String URL_CONTACTS 	  = "contacts";
+	public static final String URL_OFFICE_BOARD	  = "connect_uradnatabula";
+	public static final String URL_ATRIUM		  = "connect_atrium";
+	public static final String URL_ATRIUM_PROGRAM = "program_atrium";
+	public static final String URL_PARLIAMENT	  = "connect_parliament";
 	
 	
 	/****************************** assets paths ******************************/
@@ -64,6 +67,7 @@ public class Constants {
 	public static final int GET_CONTENT_OFFICE_BOARD     = 4;
 	public static final int GET_CONTENT_ATRIUM		     = 5;
 	public static final int GET_CONTENT_PARLIAMENT	     = 6;
+	public static final int GET_CONTENT_ATRIUM_PROGRAM   = 7;
 	
 	
 	

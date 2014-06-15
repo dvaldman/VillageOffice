@@ -82,6 +82,16 @@ public class ArticlesListFragment extends Fragment implements OnItemClickListene
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,	long id) {
+		
+		if(((New)list.getAdapter().getItem(position)).getPdf() == null || ((New)list.getAdapter().getItem(position)).getPdf().equalsIgnoreCase(""))
+			prepareArticleDetail(position);
+		else
+			preparePDF(((New)list.getAdapter().getItem(position)));
+		
+		
+	}
+	
+	private void prepareArticleDetail(int position){
 		Fragment fragment = new NewsDetailFragment();
 		Bundle args = new Bundle();
 		args.putSerializable(NewsDetailFragment.ARTICLE_KEY, (Serializable) list.getAdapter().getItem(position));
@@ -90,7 +100,17 @@ public class ArticlesListFragment extends Fragment implements OnItemClickListene
 		Message msg = new Message();
 		msg.what = Constants.MESSAGE_DESELECT;
 		MainActivity.controlHandler.sendMessage(msg);
-		
+	}
+	
+	private void preparePDF(New pdfItem){
+		Fragment fragment = new PDFDetailFragment();
+		Bundle args = new Bundle();
+		args.putSerializable(PDFDetailFragment.ARTICLE_KEY, (Serializable) list.getAdapter().getItem(0));
+		fragment.setArguments(args);
+		getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).addToBackStack("tag").commit();
+		Message msg = new Message();
+		msg.what = Constants.MESSAGE_DESELECT;
+		MainActivity.controlHandler.sendMessage(msg);
 	}
 
 }

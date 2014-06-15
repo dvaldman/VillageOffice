@@ -15,6 +15,7 @@ public class New implements IItem, Serializable{
 	private String shortDesc;
 	private String date;
 	private String thumbnail;
+	private String pdf;
 	
 	public void setDate(String date){
 		this.date = date;
@@ -30,6 +31,14 @@ public class New implements IItem, Serializable{
 	
 	public String getLongDesc(){
 		return londDesc;
+	}
+	
+	public void setPdf(String pdfDoc){
+		this.pdf = pdfDoc;
+	}
+	
+	public String getPdf(){
+		return pdf;
 	}
 	
 	public void setShortDesc(String shortDesc){

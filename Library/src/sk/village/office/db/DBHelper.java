@@ -15,7 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper
 {
 	private static final String	NAME		= "office.db";
-	private static final int VERSION		= 1;
+	private static final int VERSION		= 2;
 	
 	private static DBHelper	instance	= null;
 	
@@ -141,6 +141,8 @@ public class DBHelper extends SQLiteOpenHelper
 			return Tables.Atrium.TABLE_NAME;
 		case Constants.GET_CONTENT_PARLIAMENT:
 			return Tables.Parliament.TABLE_NAME;
+		case Constants.GET_CONTENT_ATRIUM_PROGRAM:
+			return Tables.AtriumProgram.TABLE_NAME;
 			
 		default:
 			return "";

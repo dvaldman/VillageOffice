@@ -1,123 +1,178 @@
 {
     "places": [
         {
+            "name": "Lekáreň Miliana",
+            "address": "Ondavská 10/C, 04011 Košice",
+            "latitude": "48.7192447",
+            "longitude": "21.2338158",
+            "category": "pharmacy"
+        },
+        {
             "name": "LEKÁREŇ PRI DATASE",
-            "latitude": "48.714802",
-            "longitude": "21.216773",
+            "address": "Toryská 275/1, 04011 Košice",
+            "latitude": "48.7149692",
+            "longitude": "21.237249",
             "category": "pharmacy"
         },
         {
             "name": "LEKÁREŇ KAMILKA",
-            "latitude": "48.715329",
-            "longitude": "21.229962",
+            "address": "Brigádnická 247/2, 04011 Košice",
+            "latitude": "48.7127039",
+            "longitude": "21.2375494",
             "category": "pharmacy"
         },
         {
             "name": "LEKÁREŇ TERASA",
-            "latitude": "48.708122",
-            "longitude": "21.237421",
+            "address": "Trieda SNP 339/88, 04011 Košice",
+            "latitude": "48.7070118",
+            "longitude": "21.2334724",
             "category": "pharmacy"
         },
         {
-            "name": "LEKÁREN ECHINACEA",
-            "latitude": "48.719134",
-            "longitude": "21.211709",
+            "name": "LEKÁREŇ ECHINACEA",
+            "address": "Trieda SNP 457/1, 04011 Košice",
+            "latitude": "48.7192447",
+            "longitude": "21.2338158",
             "category": "pharmacy"
         },
         {
-            "name": "LEKÁREŇ TORYSKA",
-            "latitude": "48.719134",
-            "longitude": "21.211709",
-            "category": "pharmacy"
-        },
-        {
-            "name": "VEREJNÁ LEKÁREŇ",
-            "latitude": "48.709677",
-            "longitude": "21.214713",
-            "category": "pharmacy"
-        },
-        {
-            "name": "LEKÁREŇ ZORA",
-            "latitude": "48.714802",
-            "longitude": "21.216773",
+            "name": "LEKÁREŇ TORYSKÁ",
+            "address": "Toryská 1, 04011 Košice",
+            "latitude": "48.7149692",
+            "longitude": "21.237249",
             "category": "pharmacy"
         },
         {
             "name": "LEKÁREŇ AESCULAP",
-            "latitude": "48.719134",
-            "longitude": "21.211709",
+            "address": "Toryská, 04011 Košice",
+            "latitude": "48.7149692",
+            "longitude": "21.237249",
             "category": "pharmacy"
         },
         {
-            "name": "ARTKE s.r.o.",
-            "latitude": "48.718200",
-            "longitude": "21.219047",
+            "name": "LEKÁREŇ NA ONDAVSKEJ",
+            "address": "Ondavská 1559/4, 04011 Košice",
+            "latitude": "48.7192447",
+            "longitude": "21.2338158",
             "category": "pharmacy"
         },
         {
             "name": "MULTIPHARM, s.r.o.",
+            "address": "Toryská 275/1, 04011 Košice",
             "latitude": "48.718200",
             "longitude": "21.219047",
             "category": "pharmacy"
         },
         {
-            "name": "SyndiPharmaspol.sr.o.",
-            "latitude": "48.718200",
-            "longitude": "21.219047",
+            "name": "SyndiPharma spol.sr.o.",
+            "address": "Trieda SNP 1, 04011 Košice",
+            "latitude": "48.7192447",
+            "longitude": "21.2338158",
             "category": "pharmacy"
         },
         {
             "name": "Sambuccus-s.r.o.",
-            "latitude": "48.718200",
-            "longitude": "21.219047",
+            "address": "Muškátová 518/7, 04011 Košice",
+            "latitude": "48.7149692",
+            "longitude": "21.237249",
             "category": "pharmacy"
         },
         {
-            "name": "MIESTNYÚRADKOŠICE-ZÁPAD",
-            "latitude": "48.714487",
-            "longitude": "21.236018",
+            "name": "Mgr.Cecília Kupčíková, lekáreň HELIANT",
+            "address": "Hronská 14, 04011 Košice",
+            "latitude": "48.7192447",
+            "longitude": "21.2338158",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ Remedia",
+            "address": "Pražská 502/4, 04011 Košice",
+            "latitude": "48.7149692",
+            "longitude": "21.237249",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ Prima Pharma",
+            "address": "Gudernova 292/3,  04011 Košice",
+            "latitude": "48.7070118",
+            "longitude": "21.2334724",
+            "category": "pharmacy"
+        },
+        {
+            "name": "LEKÁREŇ Dr.Max",
+            "address": "Popradská 2315/92, 04011 Košice",
+            "latitude": "48.7017157",
+            "longitude": "21.2305971",
+            "category": "pharmacy"
+        },
+        {
+            "name": "MIESTNY ÚRAD KOŠICE-ZÁPAD",
+            "address": "Trieda SNP 39, 04011 Košice",
+            "latitude": "48.7144616",
+            "longitude": "21.2361555",
             "category": "bureau"
         },
         {
-            "name": "PolíciaSR-ObvodnéoddeleniePZKošice-Západ",
-            "latitude": "48.7162274",
-            "longitude": "21.2380791",
+            "name": "Átrium Klub",
+            "address": "Zuzkin park 4, 04011 Košice",
+            "latitude": "48.7188426",
+            "longitude": "21.2374395",
+            "category": "bureau"
+        },
+        {
+            "name": "Administratívna budova",
+            "address": "Hellova 2, 04011 Košice",
+            "latitude": "48.6990085",
+            "longitude": "21.2319249",
+            "category": "bureau"
+        },
+        {
+            "name": "Multifunkčný objekt-Zariadenie opatrovateľskej služby, Denné centrum pre seniorov a materské centrum",
+            "address": "Laborecká 2, 04011 Košice",
+            "latitude": "48.7163541",
+            "longitude": "21.2353822",
+            "category": "bureau"
+        },
+        {
+            "name": "Polícia SR - Obvodné oddelenie PZ Košice-Západ",
+            "address": "Považská 472/38, 04011 Košice",
+            "latitude": "48.7106975",
+            "longitude": "21.2316709",
             "category": "police"
         },
         {
             "name": "Mestská polícia",
-            "latitude": "48.7149603",
-            "longitude": "21.2362015",
+            "address": "Trieda SNP, 04011 Košice",
+            "latitude": "48.7145509",
+            "longitude": "21.236908",
             "category": "police"
         },
         {
-            "name": "OkresnériaditeľstvoPZKošice-okolie",
-            "latitude": "48.7149603",
-            "longitude": "21.2362015",
-            "category": "police"
-        },
-        {
-            "name": "PoliklinikaTerasa",
+            "name": "Poliklinika Terasa",
+            "address": "Toryská 275/1, 04011 Košice",
             "latitude": "48.713579",
             "longitude": "21.2309295",
             "category": "hospital"
         },
         {
-            "name": "MedicínskeCentrumKošicespol.s.r.o.",
-            "latitude": "48.7106975",
-            "longitude": "21.2316709",
+            "name": "Fakultná nemocnica L.Pasteura Košice-pracovisko Trieda SNP 1",
+            "address": "Trieda SNP 457/1, 04011 Košice",
+            "latitude": "48.723856",
+            "longitude": "21.2366408",
             "category": "hospital"
         },
         {
-            "name": "Ergomeds.r.o.",
-            "latitude": "48.7149603",
-            "longitude": "21.2362015",
+            "name": "Medicínske Centrum Košice spol. s.r.o.",
+            "address": "Brigádnicka 2, 04011 Košice",
+            "latitude": "48.715329",
+            "longitude": "21.229962",
             "category": "hospital"
         },
         {
-            "name": "ErgomedPoliklinikaS.r.o.-ADOS",
-            "latitude": "48.7171537",
-            "longitude": "21.2193113",
+            "name": "Ergomed Poliklinika s.r.o.-ADOS",
+            "address": "Moldavská cesta 21, 04011 Košice",
+            "latitude": "48.7076517",
+            "longitude": "21.2426563",
             "category": "hospital"
         }
     ]

@@ -79,7 +79,7 @@ public class ContentHolder {
         	do{
 	        	place = new Place();
 	        	place.setName(c.getString(c.getColumnIndex(Tables.Places.NAME)));
-	    		
+	        	place.setAddress(c.getString(c.getColumnIndex(Tables.Places.ADDRESS)));
 	    		place.setDescription(c.getString(c.getColumnIndex(Tables.Places.DESCRIPTION)));
 	    		LatLng gps = new LatLng(Double.parseDouble(c.getString(c.getColumnIndex(Tables.Places.LATITUDE))), Double.parseDouble(c.getString(c.getColumnIndex(Tables.Places.LONGITUDE))));
 	    		place.setGps(gps);
@@ -161,6 +161,26 @@ public class ContentHolder {
 		List<New> news = new ArrayList<New>();
 		
 		Cursor c = DBHelper.getInstance(context).getResultsFromSingleTable(
+        		Tables.AtriumProgram.TABLE_NAME,
+        		null,
+        		null);
+		
+		New atrProg = null;
+		
+		if(c.moveToFirst()){
+        	do{
+        		atrProg = new New();
+        		atrProg.setTitle(c.getString(c.getColumnIndex(Tables.AtriumProgram.TITLE)));
+        		atrProg.setShortDesc(c.getString(c.getColumnIndex(Tables.AtriumProgram.SHORT_DESC)));
+        		atrProg.setPdf(c.getString(c.getColumnIndex(Tables.AtriumProgram.PDF)));
+        		atrProg.setDate(c.getString(c.getColumnIndex(Tables.AtriumProgram.DATE)));
+        		atrProg.setThumbnail(c.getString(c.getColumnIndex(Tables.AtriumProgram.IMAGE)));
+	    		news.add(atrProg);
+        	}while(c.moveToNext());
+    	}
+		
+		
+		c = DBHelper.getInstance(context).getResultsFromSingleTable(
         		Tables.Atrium.TABLE_NAME,
         		null,
         		null);

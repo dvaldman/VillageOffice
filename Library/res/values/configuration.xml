@@ -9,6 +9,7 @@
    <bool name="static_OfficeBoard">false</bool>
    <bool name="static_atrium">false</bool>
    <bool name="static_parliament">false</bool>
+   <bool name="static_atrium_program">false</bool>
    
    
 <!--    places categories	 -->

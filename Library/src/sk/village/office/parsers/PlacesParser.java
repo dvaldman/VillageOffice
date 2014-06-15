@@ -65,6 +65,8 @@ public class PlacesParser {
 			values.put(Tables.Places.NAME, json.getString(Constants.KEYWORD_NAME));
 			values.put(Tables.Places.LONGITUDE, json.getString(Constants.KEYWORD_LONGITUDE));
 			values.put(Tables.Places.LATITUDE, json.getString(Constants.KEYWORD_LATITUDE));
+//			values.put(Tables.Places.DESCRIPTION, json.getString(Constants.KEYWORD_DESCRIPTION));
+			values.put(Tables.Places.ADDRESS, json.getString(Constants.KEYWORD_ADDRESS));
 			values.put(Tables.Places.CATEGORY, category);
 			database.insertValuesIntoTable(Tables.Places.TABLE_NAME, values);
 			addCategory(category);

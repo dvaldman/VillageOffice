@@ -11,6 +11,7 @@ import sk.village.office.communication.URLBuilder;
 import sk.village.office.communication.WebClient;
 import sk.village.office.db.DBHelper;
 import sk.village.office.parsers.AtriumParser;
+import sk.village.office.parsers.AtriumProgramParser;
 import sk.village.office.parsers.MayorParser;
 import sk.village.office.parsers.NewsParser;
 import sk.village.office.parsers.OfficeBoardParser;
@@ -96,6 +97,8 @@ public class DataAggregator {
 			return new AtriumParser(response, context).parseResponse();
 		case Constants.GET_CONTENT_PARLIAMENT:
 			return new ParliamentParser(response, context).parseResponse();
+		case Constants.GET_CONTENT_ATRIUM_PROGRAM:
+			return new AtriumProgramParser(response, context).parseResponse();
 			
 		default:
 			return false;
