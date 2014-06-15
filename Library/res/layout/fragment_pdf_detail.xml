@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_dark_blue"
+        >
+
+   
+    
+    <WebView 
+        android:id="@+id/pdf_webview"
+        android:background="@color/app_white"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/news_detail_margin_top"
+        android:layout_marginLeft="@dimen/news_detail_margin_sides"
+        android:layout_marginRight="@dimen/news_detail_margin_sides"/>
+        
+	 <ImageButton 
+        android:id="@+id/exit_button"
+        android:background="@drawable/button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/news_detail_exit_top"
+        android:layout_marginRight="@dimen/news_detail_exit_right"
+        />
+    
+
+</RelativeLayout>
