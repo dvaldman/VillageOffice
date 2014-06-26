@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -31,6 +32,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Handler.Callback;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -50,6 +52,7 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	
 	private LinearLayout photosContainer;
 	private static final int SELECT_PICTURE_CAMERA = 0;
+	private static final int ENABLE_LOCALIZATIONS = 1;
 	private LayoutInflater inflater;
 	private static ArrayList<Bitmap> photos;
 	private EditText reportEditText;
@@ -65,7 +68,65 @@ public class ReportFragment extends Fragment implements OnClickListener{
 			photos = new ArrayList<Bitmap>();
 		
 	}
+	
+	private Callback callbck = new Callback() {
+		
+		@Override
+		public boolean handleMessage(Message msg) {
+			switch (msg.what) {
+			case Constants.MESSAGE_SHOW_ERROR:
+				showErrorDialog();
+				break;
 
+			default:
+				break;
+			}
+			return false;
+		}
+	};
+	
+	public void showErrorDialog(){
+		
+		
+		LocationManager lm = null;
+		 boolean gps_enabled = false;
+		 boolean network_enabled = false;
+		    if(lm==null)
+		        lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+		    try{
+		    gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		    }catch(Exception ex){}
+		    try{
+		    network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+		    }catch(Exception ex){}
+
+		   if(!gps_enabled && !network_enabled){
+			    AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+			    dialog.setTitle("Adresa sa nenaäla");
+		        dialog.setMessage("Skontrolujte ‹i m‡te zapnutŽ lokaliza‹nŽ sluìby a pr’stup na internet");
+		        dialog.setPositiveButton("Povolié lokaliza‹nŽ sluìby", new DialogInterface.OnClickListener() {
+
+		            @Override
+		            public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+		                getActivity().startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS),ENABLE_LOCALIZATIONS);
+		                //get gps
+		            } 
+		        });
+		        dialog.setNegativeButton("Zruäié", new DialogInterface.OnClickListener() {
+
+		            @Override
+		            public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+		                // TODO Auto-generated method stub
+
+		            }
+		        });
+		        dialog.show();
+
+		    }
+		   
+	}
+	
+	
 		
 	@SuppressLint("HandlerLeak")
 	@Override
@@ -79,7 +140,8 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		userAddresstEditText = (EditText) v.findViewById(R.id.users_address);
 	    LatLng pos = new LatLng(GPSProvider.getInstance(getActivity()).getLatitude(), GPSProvider.getInstance(getActivity()).getLongitude());
 	    
-	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,new View[]{addressBar,userAddresstEditText});
+	    
+	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,new View[]{addressBar,userAddresstEditText},callbck);
 		
 	    reportEditText = (EditText) v.findViewById(R.id.report_desc);
 	    reportEditText.addTextChangedListener(new TextWatcher() {
@@ -101,6 +163,8 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	    
         return v;
 	}
+	
+	
 	
 	private void fillPhotoContainer(){
 		photosContainer.removeAllViews();
@@ -124,6 +188,21 @@ public class ReportFragment extends Fragment implements OnClickListener{
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		((BaseActivity)getActivity()).hideProgress();
+		
+		if (requestCode == SELECT_PICTURE_CAMERA)
+			handlePhoto(requestCode, resultCode, data);
+		if (requestCode == ENABLE_LOCALIZATIONS)
+			handleLocalizations();
+			
+	}
+	
+	private void handleLocalizations(){
+		LatLng pos = new LatLng(GPSProvider.getInstance(getActivity()).getLatitude(), GPSProvider.getInstance(getActivity()).getLongitude());
+	    AddressProvider.getAddressForLatLong(getActivity(), pos, AddressProvider.STREET_CITY,new View[]{addressBar,userAddresstEditText},callbck);
+		   
+	}
+	
+	private void handlePhoto(int requestCode, int resultCode, Intent data){
 		if (resultCode == Activity.RESULT_OK) {
 			File file = null;
 			if (requestCode == SELECT_PICTURE_CAMERA)
@@ -154,7 +233,8 @@ public class ReportFragment extends Fragment implements OnClickListener{
 		
 		if(report != null && !report.equalsIgnoreCase(""))
 			 reportEditText.setText(report);
-		    
+		
+		
 	}
 	
 	

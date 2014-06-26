@@ -61,25 +61,25 @@ public class SplashActivity extends BaseActivity{
 			try {
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_MAYOR))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_MAYOR));
+					Log.v("data mayor initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_MAYOR));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_PLACES))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PLACES));
+					Log.v("data places initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PLACES));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_NEWS))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_NEWS));
+					Log.v("data news initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_NEWS));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_OFFICE_BOARD))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_OFFICE_BOARD));
+					Log.v("data office board initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_OFFICE_BOARD));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_ATRIUM))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM));
+					Log.v("data atrium initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_PARLIAMENT))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PARLIAMENT));
+					Log.v("data parliament initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_PARLIAMENT));
 				
 				if(aggreg.doesDataNeedToBeUpdated(Constants.GET_CONTENT_ATRIUM_PROGRAM))
-					Log.v("data initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM_PROGRAM));
+					Log.v("data atrium program initialized "+aggreg.updateContetnt(Constants.GET_CONTENT_ATRIUM_PROGRAM));
 				
 			} catch (Exception e) {
 				e.printStackTrace();

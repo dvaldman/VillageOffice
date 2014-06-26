@@ -17,6 +17,14 @@
 	        android:paddingTop="@dimen/marker_padding_top_bottom"
 	        android:paddingLeft="@dimen/marker_padding_sides"
 	    	android:paddingRight="@dimen/marker_padding_right"
+	    	
+	    	android:maxLines="3"
+		    android:ellipsize="marquee"
+		    android:marqueeRepeatLimit="marquee_forever"
+		    android:singleLine="false"
+		    android:scrollHorizontally="true"
+		    android:focusable="true"
+		    android:focusableInTouchMode="true"
 			 />
 	
 	    <TextView

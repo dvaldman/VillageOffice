@@ -13,6 +13,7 @@ public class Constants {
 	public static final int MESSAGE_SELECT_MORE 	= 4;
 	public static final int MESSAGE_DESELECT		= 5;
 	public static final int MESSAGE_GET_ADDRESS		= 6;
+	public static final int MESSAGE_SHOW_ERROR		= 7;
 	
 	/****************************** Json keywords ******************************/
 	public static final String	KEYWORD_ID 				= "id";
@@ -42,12 +43,12 @@ public class Constants {
 	public static final String	KEYWORD_POLIT_PARTY		= "politicalParty";
 	public static final String	KEYWORD_PARLIAMENT		= "parliament";
 	
-	public static final String URL_BASE_ONLINE 	= "http://rozpocetmesta.sk/aplikacia_KE/"+PLACEHOLDER_STRING+".php";
+	public static final String URL_BASE_ONLINE 	= "http://kosicezapad.sk//aplikacia_KE/"+PLACEHOLDER_STRING+".php";
 	public static final String URL_BASE_OFFLINE = "json/"+PLACEHOLDER_STRING+".json";
 	
 	public static final String URL_MAYOR 		  = "mayor";
 	public static final String URL_PLACES 		  = "places";
-	public static final String URL_NEWS 		  = "connect";
+	public static final String URL_NEWS 		  = "connect_articles";
 	public static final String URL_CONTACTS 	  = "contacts";
 	public static final String URL_OFFICE_BOARD	  = "connect_uradnatabula";
 	public static final String URL_ATRIUM		  = "connect_atrium";

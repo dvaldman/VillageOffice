@@ -36,16 +36,16 @@
 				android:textSize="@dimen/main_menu_text"
 	         />
 			
-			<ScrollView 
-			    android:layout_width="fill_parent"
-			    android:layout_height="fill_parent">
-			    <TextView 
-			        android:padding="@dimen/news_detail_long_desc_padding"
+<!-- 			<ScrollView  -->
+<!-- 			    android:layout_width="fill_parent" -->
+<!-- 			    android:layout_height="fill_parent"> -->
+			    <WebView 
+			        android:layout_margin="@dimen/news_detail_long_desc_padding"
 			        android:id="@+id/news_detail_long_desc"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        />
-			</ScrollView>
+<!-- 			</ScrollView> -->
         
     </LinearLayout>
     

@@ -32,6 +32,8 @@ public class OfficeListAdapter extends BaseAdapter{
 	
 	@Override
 	public int getCount() {
+		if(menuItems == null || menuItems.length == 0)
+			return 0;
 		return this.menuItems.length;
 	}
 

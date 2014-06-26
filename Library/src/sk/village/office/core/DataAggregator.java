@@ -58,7 +58,7 @@ public class DataAggregator {
 				parseString(response, data_id);
 			}
 			result = true;
-			
+			 
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

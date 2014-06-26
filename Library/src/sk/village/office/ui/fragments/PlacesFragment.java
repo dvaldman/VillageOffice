@@ -251,14 +251,11 @@ public class PlacesFragment extends Fragment implements OnClickListener{
 				TVaddress.setText(item.getAddress());
 			title.setText(item.getName());
 			
-			
-			title.setEllipsize(TruncateAt.MARQUEE);
-			TVaddress.setEllipsize(TruncateAt.MARQUEE);
 			title.setSelected(true);
 			
-			title.setSingleLine();
-			title.setEllipsize(TruncateAt.MARQUEE);
-			title.setHorizontallyScrolling(true);
+//			title.setSingleLine();
+//			title.setEllipsize(TruncateAt.MARQUEE);
+//			title.setHorizontallyScrolling(true);
 			
 	      }catch(Exception e){}
 	      

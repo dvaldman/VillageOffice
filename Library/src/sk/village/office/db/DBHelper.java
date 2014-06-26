@@ -14,8 +14,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper
 {
-	private static final String	NAME		= "office.db";
 	private static final int VERSION		= 2;
+	private static final String	NAME		= "office"+VERSION+".db";
 	
 	private static DBHelper	instance	= null;
 	
@@ -100,7 +100,12 @@ public class DBHelper extends SQLiteOpenHelper
 					sql = sql + " AND ";
 			}
 		}
-		Cursor c = db.rawQuery(sql,areEquealThese);
+		Cursor c = null;
+		try{
+			c = db.rawQuery(sql,areEquealThese);
+		}catch(Exception e){
+			Log.e(e.getMessage());
+		}
 		return c;
 	}
 	

@@ -27,6 +27,8 @@ public class NewsListAdapter extends BaseAdapter{
 	
 	@Override
 	public int getCount() {
+		if(listItems == null || listItems.size() == 0)
+			return 0;
 		return this.listItems.size();
 	}
 

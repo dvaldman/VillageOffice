@@ -9,7 +9,10 @@ import sk.village.office.core.Constants;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
@@ -40,11 +43,11 @@ public class AddressProvider{
 		new AddressTask().execute();
 	}
 	
-	public static void getAddressForLatLong(Context cont, LatLng ll,int type,View[] tv){
+	public static void getAddressForLatLong(Context cont, LatLng ll,int type,View[] tv,Callback call){
 		context = cont;
 		position = ll;
 		resultFormatID = type;
-		callback = null;
+		callback = call;
 		views = tv;
 		new AddressTask().execute();
 	}
@@ -75,15 +78,18 @@ public class AddressProvider{
 	        
 	        try {
 				addresses = geo.getFromLocation(position.latitude,position.longitude, 1);
-				if (addresses.size() > 0)
+				if (addresses.size() > 0){
 					switch (resultFormatID) {
 					case STREET_CITY:
 						result =  addresses.get(0).getAddressLine(0) + ", " + addresses.get(0).getLocality();
 					}
+				}
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			return result;
+	        
+	        return result;
 		}
 		
 		@Override
@@ -99,12 +105,17 @@ public class AddressProvider{
 			}
 			if(callback != null){
 				Message msg = new Message();
-			    msg.what = Constants.MESSAGE_GET_ADDRESS;
+			    
+				if(result.equalsIgnoreCase(context.getResources().getString(R.string.address_not_found)))
+					msg.what = Constants.MESSAGE_SHOW_ERROR;
+				else
+					msg.what = Constants.MESSAGE_GET_ADDRESS;
 			    msg.obj = result;
 			       
 			    callback.handleMessage(msg);
 			}
 		}
 	}
+	
 
 }

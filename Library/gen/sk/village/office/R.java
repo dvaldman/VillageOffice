@@ -344,20 +344,21 @@ containing a value of this type.
         public static int problem_add_photo_passive=0x7f02003e;
         public static int problem_place_marker=0x7f02003f;
         public static int problem_place_sign=0x7f020040;
-        public static int splash=0x7f020041;
-        public static int starosta_passive=0x7f020042;
-        public static int subico1_act=0x7f020043;
-        public static int subico1_inact=0x7f020044;
-        public static int subico2_act=0x7f020045;
-        public static int subico2_inact=0x7f020046;
-        public static int subico3_act=0x7f020047;
-        public static int subico3_inact=0x7f020048;
-        public static int subico4_act=0x7f020049;
-        public static int subico4_inact=0x7f02004a;
-        public static int subico5_act=0x7f02004b;
-        public static int subico5_inact=0x7f02004c;
-        public static int testpic=0x7f02004d;
-        public static int volby_passive=0x7f02004e;
+        public static int reklama1=0x7f020041;
+        public static int splash=0x7f020042;
+        public static int starosta_passive=0x7f020043;
+        public static int subico1_act=0x7f020044;
+        public static int subico1_inact=0x7f020045;
+        public static int subico2_act=0x7f020046;
+        public static int subico2_inact=0x7f020047;
+        public static int subico3_act=0x7f020048;
+        public static int subico3_inact=0x7f020049;
+        public static int subico4_act=0x7f02004a;
+        public static int subico4_inact=0x7f02004b;
+        public static int subico5_act=0x7f02004c;
+        public static int subico5_inact=0x7f02004d;
+        public static int testpic=0x7f02004e;
+        public static int volby_passive=0x7f02004f;
     }
     public static final class id {
         public static int action_settings=0x7f050047;

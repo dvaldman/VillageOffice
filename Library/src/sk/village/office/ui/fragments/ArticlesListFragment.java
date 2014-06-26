@@ -51,7 +51,7 @@ public class ArticlesListFragment extends Fragment implements OnItemClickListene
         list = (ListView) v.findViewById(R.id.news_list);
         list.setAdapter(new NewsListAdapter(listItems,getActivity()));
         list.setOnItemClickListener(this);
-        
+         
         return v;
 	}
 	
@@ -62,16 +62,16 @@ public class ArticlesListFragment extends Fragment implements OnItemClickListene
 	        if(data.containsKey(KEYWORD_DISPLAY))
 		       	switch (data.getInt(KEYWORD_DISPLAY)) {
 				case DISPLAY_NEWS:
-					listItems = ContentHolder.getInstance(getActivity()).getNews();
 					headerString = getActivity().getResources().getString(R.string.news).toUpperCase();
+					listItems = ContentHolder.getInstance(getActivity()).getNews();
 					break;
 				case DISPLAY_OFFICE_BOARD:
-					listItems = ContentHolder.getInstance(getActivity()).getOfficeBoard();
 					headerString = getActivity().getResources().getString(R.string.office_board).toUpperCase();
+					listItems = ContentHolder.getInstance(getActivity()).getOfficeBoard();
 					break;
 				case DISPLAY_ATRIUM:
-					listItems = ContentHolder.getInstance(getActivity()).getAtrium();
 					headerString = getActivity().getResources().getString(R.string.atrium).toUpperCase();
+					listItems = ContentHolder.getInstance(getActivity()).getAtrium();
 					break;
 				default:
 					return;

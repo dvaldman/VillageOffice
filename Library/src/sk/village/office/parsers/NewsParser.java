@@ -43,7 +43,9 @@ public class NewsParser {
 			parseNews(json.getJSONArray(Constants.KEYWORD_NEWS));
 			result = true;
 			
-		}catch (Exception e){}
+		}catch (Exception e){
+			Log.e("padol news parser "+e.getMessage());
+		}
 		finally{
 			values = null;
 			System.gc();
